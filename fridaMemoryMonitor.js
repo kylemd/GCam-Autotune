@@ -38,11 +38,11 @@ const Libcam = {
 
 const Armceptor = {
 
-	monitormem: function(libaddr, hexlength) {
-		MemoryAccessMonitor.enable(
+	monitormem: function(ramaddr, ramlength) {
+		var mem = MemoryAccessMonitor.enable(
             {
-                base: libaddr,
-                size: hexlength
+                base: ramaddr,
+                size: ramlength
             },
             {
                 onAccess: function(details) {
@@ -51,17 +51,31 @@ const Armceptor = {
                     )               
                 }
             }
-        )
-        console.log("Hit enter when you're done")
-
+        );
+        mem.wait();
     },
 };
 
+function putRamtoArray(libaddr) {
+        let i = 0;
+        for (i = 0; i < libaddr.length; i++) {
+            libaddr[i] = Libcam.offset(Number(libaddr[i]));
+        }
+}
+
+function strToNum(hexlength) {
+        let i = 0;
+        for (i = 0; i < hexlength.length; i++) {
+            hexlength[i] = Number(hexlength[i]);
+        }
+}
+
 const memoryMon = {
     watch_hex(libaddr, hexlength) {
-        console.log("in watch_hex")
-        libaddr = Number('0x' + libaddr)
-        Armceptor.monitormem(Libcam.offset(libaddr),Number(hexlength));
+
+        let ramaddr = putRamtoArray(libaddr)
+        let ramlength = strToNum(hexlength)
+        Armceptor.monitormem(ramaddr,ramlength);
     }
 }
 
@@ -69,7 +83,7 @@ const memoryMon = {
 function memoryMonitor(libaddr, hexlength) {
 
     Libcam.init();
-    memoryMon.watch_hex(libaddr,hexlength);
+    memoryMon.watch_hex(libaddr, hexlength);
 }
 
 rpc.exports = {

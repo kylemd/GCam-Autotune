@@ -1,5 +1,6 @@
 import frida
 import time
+import sys
 
 # Define message handler for Frida JS so script can communicate.
 def msgHandler(message , payload): 
@@ -7,13 +8,16 @@ def msgHandler(message , payload):
 	print(payload)
 
 def watchInMemory(libvalues):
-    
+
 	libaddress = list()
 	hexlength = list()
     
 	for x in libvalues:
 		libaddress.append(x.split(",")[0])
 		hexlength.append(len(x.split(",")[1]))
+  
+	for x in libaddress:
+		print(x)
         
 	# Camera package name. Change this if needed
 	packageName = 'org.codeaurora.snapcam'
@@ -31,3 +35,5 @@ def watchInMemory(libvalues):
 
 	#Loop through values and pass them to the memory monitor
 	script.exports.monitorlibmemory(libaddress,hexlength)
+
+	sys.stdin.read()

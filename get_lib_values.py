@@ -1,11 +1,7 @@
-from itertools import count
 import urllib.request
 import json
 import operator
-
-from sqlalchemy import values
 import fridaMemoryMonitor
-import frida
 
 #def GetLibValues():
 
@@ -18,6 +14,6 @@ input_dict.sort(key=operator.itemgetter('address'))
 libvalues = list()
 
 for x in input_dict:
-	libvalues.append(x['address'] + "," + x['hex_original'])
+	libvalues.append('0x' + x['address'] + "," + x['hex_original'])
 
 fridaMemoryMonitor.watchInMemory(libvalues)
