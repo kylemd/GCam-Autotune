@@ -43,29 +43,6 @@ const Armceptor = {
     },
 };
 
-function putRamtoArray(libaddr) {
-        let i = 0;
-        for (i = 0; i < libaddr.length; i++) {
-            libaddr[i] = Libcam.offset(Number(libaddr[i]));
-        }
-}
-
-function strToNum(hexlength) {
-        let i = 0;
-        for (i = 0; i < hexlength.length; i++) {
-            hexlength[i] = Number(hexlength[i]);
-        }
-}
-
-const memoryMon = {
-    watch_hex(liblist) {
-
-        let ramaddr = putRamtoArray(liblist)
-        let ramlength = strToNum(hexlength)
-        Armceptor.monitormem(ramaddr,ramlength);
-    }
-}
-
 function memoryMonitor(liblist) {
 
     Libcam.init();                                                  // Get current memory offset of libgcastartup.so
@@ -75,25 +52,25 @@ function memoryMonitor(liblist) {
 
     var libvalues = []
 
-    for (let i = 0; i < libarg.length; i++) {
-        console.log(JSON.stringify(libarg[i]))                      // This also works which means each lib value is a JS object
-        libvalues.push(libarg["address"],libarg["length_in_lib"]);  // If that's the case then this should work
-    } 
-
     for (let i = 0; i < libvalues.length; i++) {
-        console.log(libvalues[i]);                                  // But then this doesn't work
+
+    console.log(JSON.stringify(libarg[i]));                         // This also works which means each lib value is a JS object
+    libvalues.push(libarg["address"],libarg["length_in_lib"]);      // If that's the case then this should work
+
     } 
 
-    // const arrArr = libobject.map(x => Object.values(x));
+    for (let i = 0; i < libarg.length; i++) {                       // This accesses the labels for each field
 
-    // console.log(arrArr.address);
+        let text = "";                                              // Surely there is a better way than this though?
+        for (const x in libarg[i]) {
+        text += x + ", ";                                           
+        }
 
-    // var result = [];
+        console.log(text);
 
-    // for(var i in liblist)
-    //     result.push([liblist.address[i],liblist.length_in_lib[i]]);
+    }
+} 
 
-}
 
 rpc.exports = {
     monitorlibmemory: memoryMonitor
