@@ -12,38 +12,25 @@ const Libcam = {
             Libcam.size = gclib.size;
             Libcam.end = Libcam.begin.add(Libcam.size);
 
-        //Echo values to console for debugging
-            // console.log('Lib stats:')
-            // console.log('Size (bytes):' + gclib.size);
-            // console.log('Base address:' + gclib.base);
-            // console.log('End address:' + Libcam.end);
-
     },
 
     offset(addr) {
-
-        //Calculate new hex address for libpatcher value 
-            let newoff = Libcam.begin.add(addr) 
-
-        //Return new value to routine
-            return newoff;
+ 
+            let newoff = Libcam.begin.add(addr) //Calculate new hex address for libpatcher value
+            return newoff;                      //Return new value to routine
     },
 
     size() {
-        //Return gcam lib size
-            return gclib.size
+            return gclib.size                   //Return gcam lib size
     }
 
 };
 
 const Armceptor = {
 
-	monitormem: function(ramaddr, ramlength) {
+	monitormem: function(monitorObjects) {
 		var mem = MemoryAccessMonitor.enable(
-            {
-                base: ramaddr,
-                size: ramlength
-            },
+            monitorObjects,
             {
                 onAccess: function(details) {
                     console.log(
@@ -71,19 +58,41 @@ function strToNum(hexlength) {
 }
 
 const memoryMon = {
-    watch_hex(libaddr, hexlength) {
+    watch_hex(liblist) {
 
-        let ramaddr = putRamtoArray(libaddr)
+        let ramaddr = putRamtoArray(liblist)
         let ramlength = strToNum(hexlength)
         Armceptor.monitormem(ramaddr,ramlength);
     }
 }
 
+function memoryMonitor(liblist) {
 
-function memoryMonitor(libaddr, hexlength) {
+    Libcam.init();                                                  // Get current memory offset of libgcastartup.so
+    let libarg = JSON.parse(liblist);                               // Parse API dictionary. Seems to be object of arrays...
+    
+    // console.log(JSON.stringify(libarg));                         // This works which means it's a JS object
 
-    Libcam.init();
-    memoryMon.watch_hex(libaddr, hexlength);
+    var libvalues = []
+
+    for (let i = 0; i < libarg.length; i++) {
+        console.log(JSON.stringify(libarg[i]))                      // This also works which means each lib value is a JS object
+        libvalues.push(libarg["address"],libarg["length_in_lib"]);  // If that's the case then this should work
+    } 
+
+    for (let i = 0; i < libvalues.length; i++) {
+        console.log(libvalues[i]);                                  // But then this doesn't work
+    } 
+
+    // const arrArr = libobject.map(x => Object.values(x));
+
+    // console.log(arrArr.address);
+
+    // var result = [];
+
+    // for(var i in liblist)
+    //     result.push([liblist.address[i],liblist.length_in_lib[i]]);
+
 }
 
 rpc.exports = {
