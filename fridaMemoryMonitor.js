@@ -16,59 +16,74 @@ const Libcam = {
 
     offset(addr) {
  
-            let newoff = Libcam.begin.add(addr) //Calculate new hex address for libpatcher value
-            return newoff;                      //Return new value to routine
+            let newoff = Libcam.begin.add(addr)                                 //Calculate new hex address for libpatcher value
+            return newoff;                                                      //Return new value to routine
     },
 
     size() {
-            return gclib.size                   //Return gcam lib size
-    }
+            return gclib.size                                                   //Return gcam lib size
+    },
+
+    ramToOffset(addr) {
+        let oldoff = addr.sub(Libcam.begin).toString(16);
+        return oldoff;                                                          //Return libpatcher address
+}
+
+};
+
+const addarr = {
+
+    rtnAddresses: function(libarg) {
+        var libvalues = [];                                                     // Define empty array for pointers
+
+        for (let i = 0; i < libarg.length; i++) {
+
+            let addr = Libcam.offset(Number('0x' + libarg[i].address));         // Convert stored offset to match current memory address
+            let bytes = Number(libarg[i].length_in_lib);
+
+            var rng =   {                                                       // Instantiate object with base and size
+                            base: addr,
+                            size: bytes
+                        }
+
+            libvalues.push(rng);
+            // console.log(libarg[i].address.toString(16), addr.toString(16), Libcam.ramToOffset(addr).toString(16))
+
+        }
+
+        return libvalues;
+    },
 
 };
 
 const Armceptor = {
 
-	monitormem: function(monitorObjects) {
+	monitormem: function(libvalues) {
 		var mem = MemoryAccessMonitor.enable(
-            monitorObjects,
+            libvalues,                                                                                      // Array of objects we made earlier
             {
                 onAccess: function(details) {
                     console.log(
-                        details.address + "," + details.operation + "," + details.from.sub(base_addr) + "," + pagesCompleted + "/" + pagesTotal
-                    )               
+                        Libcam.ramToOffset(libvalues[details.rangeIndex].base).toString(16) +               // Address doesn't seem to work, so we use index to work back to libpatcher address
+                        " " + details.operation + 
+                        " " + details.pagesCompleted + 
+                        "/" + details.pagesTotal    
+                    )                                                                               
                 }
             }
         );
-        mem.wait();
     },
 };
 
 function memoryMonitor(liblist) {
 
-    Libcam.init();                                                  // Get current memory offset of libgcastartup.so
-    let libarg = JSON.parse(liblist);                               // Parse API dictionary. Seems to be object of arrays...
+    Libcam.init();                                                          // Get current memory offset of libgcastartup.so
+    const libarg = JSON.parse(liblist);                                     // Parse API dictionary. JS array of objects.
     
-    // console.log(JSON.stringify(libarg));                         // This works which means it's a JS object
+    const libvalues = addarr.rtnAddresses(libarg);                          // Send the dictionary off to extract what we need
 
-    var libvalues = []
+    Armceptor.monitormem(libvalues)                                         // Call memory monitor with array of objects
 
-    for (let i = 0; i < libvalues.length; i++) {
-
-    console.log(JSON.stringify(libarg[i]));                         // This also works which means each lib value is a JS object
-    libvalues.push(libarg["address"],libarg["length_in_lib"]);      // If that's the case then this should work
-
-    } 
-
-    for (let i = 0; i < libarg.length; i++) {                       // This accesses the labels for each field
-
-        let text = "";                                              // Surely there is a better way than this though?
-        for (const x in libarg[i]) {
-        text += x + ", ";                                           
-        }
-
-        console.log(text);
-
-    }
 } 
 
 

@@ -9,20 +9,14 @@ def GetLibValues():
     
     if os.path.isfile(jsonpath):
         f = open('libparams.json')
-        libparams_dict = json.dumps(json.load(f))
+        libparams_dict = json.load(f)
+        # print(libparams_dict)
     else:
-        try:
             with urllib.request.urlopen(requrl) as req:
-                libparams_dict = json.dumps(json.load(req))
+                libparams_dict = json.load(req)
+            # print(libparams_dict)
 
             with open("libparams.json", "w") as outfile:
-                outfile.write(libparams_dict)
-                
-        except req.exceptions.RequestException as e:
-            print(e)
-            exit()
-        except (req.exceptions.InvalidJSONError, TypeError):
-            print("Invalid JSON Error.")
-            exit()
+                outfile.write(json.dump(libparams_dict,outfile))
             
     return libparams_dict

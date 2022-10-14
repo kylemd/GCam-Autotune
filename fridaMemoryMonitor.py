@@ -2,6 +2,7 @@ import frida
 import time
 import sys
 import libValuesAPI
+import json
 
 # Define message handler for Frida JS so script can communicate.
 def msgHandler(message , payload): 
@@ -25,4 +26,4 @@ script.on("message" , msgHandler) 											#Calls message handler for JS
 script.load()
 
 #Loop through values and pass them to the memory monitor
-script.exports.monitorlibmemory(libdict)
+script.exports.monitorlibmemory(json.dumps(libdict))
