@@ -5,3 +5,7 @@ Assets/Reference/Original/orig_focuschart-DeNoiseAI-raw.tif
 Assets/Reference/Original/orig_focuschart.tif
 *.tif
 *.pyc
+~
+.vscode
+-p
+__pycache__
