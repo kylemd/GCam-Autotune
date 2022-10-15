@@ -1,6 +1,5 @@
 import frida
 import time
-import sys
 import libValuesAPI
 import json
 
@@ -27,3 +26,4 @@ script.load()
 
 #Loop through values and pass them to the memory monitor
 script.exports.monitorlibmemory(json.dumps(libdict))
+sec = input('Press enter when you are satisfied with results.\n')

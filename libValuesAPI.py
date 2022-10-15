@@ -1,6 +1,7 @@
 import urllib.request
 import json
 import os
+import operator
 
 def GetLibValues():
 
@@ -17,6 +18,6 @@ def GetLibValues():
             # print(libparams_dict)
 
             with open("libparams.json", "w") as outfile:
-                outfile.write(json.dump(libparams_dict,outfile))
+                outfile.write(json.dumps(libparams_dict,outfile))
             
     return libparams_dict

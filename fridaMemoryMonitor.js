@@ -59,7 +59,8 @@ const addarr = {
 const Armceptor = {
 
 	monitormem: function(libvalues) {
-		var mem = MemoryAccessMonitor.enable(
+		
+        var mem = MemoryAccessMonitor.enable(
             libvalues,                                                                                      // Array of objects we made earlier
             {
                 onAccess: function(details) {
