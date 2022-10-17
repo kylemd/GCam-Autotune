@@ -49,9 +49,6 @@ def assessQuality():
     # Note that gradient propagation is disabled by default. set as_loss=True to enable it as a loss function.
     iqa_loss = pyiqa.create_metric('lpips', device=torch.device('cuda'), as_loss=True)
 
-    # create metric with custom setting
-    iqa_metric = pyiqa.create_metric('psnr', test_y_channel=True, color_space='ycbcr').to(device)
-
     # check if lower better or higher better
     print(iqa_metric.lower_better)
 

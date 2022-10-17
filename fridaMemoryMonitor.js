@@ -1,89 +1,102 @@
 /// <reference path="frida-gum.d.ts" />
 
-const Libcam = {
+const libCam = {
 
     init() {
  
         //Find GCam lib. Make sure you have libpatcher off!
-            let gclib = Process.findModuleByName("libgcastartup.so");
+            let lib_ram = Process.findModuleByName("libgcastartup.so");
 
         //Calculate lib size
-            Libcam.begin = gclib.base;
-            Libcam.size = gclib.size;
-            Libcam.end = Libcam.begin.add(Libcam.size);
+            libCam.begin = lib_ram.base;
+            libCam.size = lib_ram.size;
+            libCam.end = libCam.begin.add(libCam.size);
 
     },
 
-    offset(addr) {
+    offset(ram_addr) {
  
-            let newoff = Libcam.begin.add(addr)                                 //Calculate new hex address for libpatcher value
-            return newoff;                                                      //Return new value to routine
+            var new_offset = libCam.begin.add(ram_addr)                                 //Calculate new hex address for libpatcher value
+            return new_offset;                                                      //Return new value to routine
     },
 
     size() {
             return gclib.size                                                   //Return gcam lib size
     },
 
-    ramToOffset(addr) {
-        let oldoff = addr.sub(Libcam.begin).toString(16);
-        return oldoff;                                                          //Return libpatcher address
-}
-
+    ramToOffset(ram_addr) {
+        var lib_offset = ram_addr.sub(libCam.begin).toString(16);
+        return lib_offset;                                                          //Return libpatcher address
+    }
 };
 
-const addarr = {
+function returnAddrs(api_obj) { 
+    var rtn_addresses = [];                                                     // Define empty array for pointers
 
-    rtnAddresses: function(libarg) {
-        var libvalues = [];                                                     // Define empty array for pointers
+    for (let i = 0; i < api_obj.length; i++) {
 
-        for (let i = 0; i < libarg.length; i++) {
+        let addr_pointer = new NativePointer(libCam.offset('0x' + api_obj[i].address));         // Convert stored offset to match current memory address
+        let addr_size = api_obj[i].length_in_lib;
 
-            let addr = Libcam.offset(Number('0x' + libarg[i].address));         // Convert stored offset to match current memory address
-            let bytes = Number(libarg[i].length_in_lib);
+        var rtn =   {                                                       // Instantiate object with base and size
+                        base: addr_pointer,
+                        size: addr_size
+                    }
 
-            var rng =   {                                                       // Instantiate object with base and size
-                            base: addr,
-                            size: bytes
-                        }
+        rtn_addresses.push(rtn);
 
-            libvalues.push(rng);
-            // console.log(libarg[i].address.toString(16), addr.toString(16), Libcam.ramToOffset(addr).toString(16))
+    }
 
-        }
-
-        return libvalues;
-    },
-
+    return rtn_addresses;
 };
 
-const Armceptor = {
+function returnNames(api_obj) {
+    var rtn_names = [];                                                     // Define empty array for pointers
 
-	monitormem: function(libvalues) {
-		
-        var mem = MemoryAccessMonitor.enable(
-            libvalues,                                                                                      // Array of objects we made earlier
-            {
-                onAccess: function(details) {
-                    console.log(
-                        Libcam.ramToOffset(libvalues[details.rangeIndex].base).toString(16) +               // Address doesn't seem to work, so we use index to work back to libpatcher address
-                        " " + details.operation + 
-                        " " + details.pagesCompleted + 
-                        "/" + details.pagesTotal    
-                    )                                                                               
-                }
+    for (let i = 0; i < api_obj.length; i++) {
+
+        rtn_names.push(api_obj[i].name);
+
+    }
+
+    return rtn_names;
+};
+
+function monitorMem(address_obj,names_arr) {
+
+    MemoryAccessMonitor.enable(
+        address_obj,                                                                                      // Array of objects we made earlier
+        {
+            onAccess: function(details) {
+                
+                let lib_from = libCam.ramToOffset(details.from);
+                let lib_index = libCam.ramToOffset(address_obj[details.rangeIndex].base).toString(16);      //Frida doesnt seem to return the correct ram address so we use by index.
+                let lib_name = names_arr[details.rangeIndex];                                                //The names are in the same return order so just use array
+                
+                console.log(
+
+                    lib_index + '\t\t' + details.operation + '\t\t' + lib_from + '\t\t' + details.pagesCompleted + '\t\t' + details.pagesTotal + '\t\t' + lib_name 
+
+                );
+
+                // let index = address_obj[details.rangeIndex].base;                                           //Attempt at resuming monitoring on hit address
+                // let size = address_obj[details.rangeIndex].size;
+                
+                // monitorMem( { base: index, size: size } );
+
             }
-        );
-    },
+        }
+    );
 };
 
-function memoryMonitor(liblist) {
+function memoryMonitor(api_list) {
 
-    Libcam.init();                                                          // Get current memory offset of libgcastartup.so
-    const libarg = JSON.parse(liblist);                                     // Parse API dictionary. JS array of objects.
-    
-    const libvalues = addarr.rtnAddresses(libarg);                          // Send the dictionary off to extract what we need
+    libCam.init();                                                          // Get current memory offset of libgcastartup.so
+    var api_obj = JSON.parse(api_list);                                       // Parse API dictionary. JS array of objects.
+    var address_obj = returnAddrs(api_obj);                          // Parse addresses out of dict
+    var names_arr = returnNames(api_obj);                           // Parse addresses and matching names from dict
 
-    Armceptor.monitormem(libvalues)                                         // Call memory monitor with array of objects
+    monitorMem(address_obj,names_arr);                               // Call memory monitor with address object array and name array
 
 } 
 

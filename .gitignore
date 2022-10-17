@@ -9,3 +9,4 @@ Assets/Reference/Original/orig_focuschart.tif
 .vscode
 -p
 __pycache__
+.git_cache/frida

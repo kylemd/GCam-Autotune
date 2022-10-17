@@ -27,6 +27,7 @@ def patchAndSnap(addr_hex, orig_hex, new_value):
 	script = session.create_script(open("fridaLibPatcher.js").read())
 	script.on("message" , msgHandler) 									#Calls message handler for JS
 	script.load()
+	device.resume(pid)
 
 	#Loop through and patch values in RAM
 	for i in addr_hex:

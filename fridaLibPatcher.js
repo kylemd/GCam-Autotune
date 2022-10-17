@@ -80,8 +80,6 @@ const LibPatcher = {
     }
 }
 
-
-
 function patchlibaddrs(libaddr, newhex) {
 
     Libcam.init();
