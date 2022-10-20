@@ -1,69 +1,89 @@
-import urllib.request
 import json
 import os
-import operator
+import urllib.request
 import struct
-from ProjectPepega import arm as pp
+import fridaLibPatcher
 
-def GetLibValues():
-
-    jsonpath = 'libparams.json'
-    requrl = 'http://152.67.78.6:8080/v2/addresses/by_version/?lib_version=8.4.400_rc19&allow_in_testing=true'
+def get_value_ranges(armType,hexLength):
     
-    if os.path.isfile(jsonpath):
-        f = open('libparams.json')
-        libparams_dict = json.load(f)
-        libparams_dict.sort(key=lambda x: x["address"])
-        # print(libparams_dict)
-    else:
-            with urllib.request.urlopen(requrl) as req:
-                libparams_dict = json.load(req)
-            # print(libparams_dict)
-
-            with open("libparams.json", "w") as outfile:
-                libparams_dict.sort(key=lambda x: x["address"])
-                libparams_write = json.dumps(libparams_dict, ensure_ascii=True , indent=2)
-                outfile.write(libparams_write)
-            
-    return libparams_dict
-
-def getValueRanges(instr,length):
-
-    match instr:
-        case 'armrpl':
-            return -31, 31
-        case 'arm':
-            return -31, 31
-        case 'armflt':
-            low = struct.unpack('<f', bytes.fromhex('0000'))[0]
-            high = struct.unpack('<f', bytes.fromhex('ffff'))[0]
-            return low, high
-        case 'armdbl':
-            low = struct.unpack('<d', bytes.fromhex('0000'))[0]
-            high = struct.unpack('<d', bytes.fromhex('ffff'))[0]
-            return low, high
-        case 'armdec':
-            low = struct.unpack('<i', bytes.fromhex('0000'))[0]
-            high = struct.unpack('<i', bytes.fromhex('ffff'))[0]
-            return low, high
-        case 'armorr':
-            return -31, 31
+    # As we only need to calculate to and from a hex value and not an actual decimal etc, we just need a integer value in hex.
+    # The AI optimisation program simply requires a range to tune. We then convert that to hex and patch into instruction.
+    
+    match armType.lower():
+        # These instructions we overwrite with a simple fmov
+        case 'armrpl' | 'arm' | 'armorr':
+            low = -31
+            high = 31
+            return [low, high]
+        # These instructions always contain a #0xbbbb value so we fix their value to 4
+        case 'armflt' | 'armfltmovk' | 'armdbl' | 'armdec':
+            low = int('0' * 4,16)
+            high = int('f' * 4,16)
+            return [low, high]
+        # Doubles are a fixed length integer
         case 'dbl':
-            low = struct.unpack('<d', bytes.fromhex('0' * length))[0]
-            high = struct.unpack('<d', bytes.fromhex('f' & length))[0]
-            return low, high
+            low = int('0' * hexLength,16)
+            high = int('f' * hexLength,16)
+            return [low, high]
+        # Floats we need to convert to decimal as we can't support float resolution
         case 'flt':
-            low = struct.unpack('<f', bytes.fromhex('0' * length))[0]
-            high = struct.unpack('<f', bytes.fromhex('f' & length))[0]
-            return low, high
-        
-    # armdbl        movk x25, #0x40af, lsl #48
-    # armdec        movz w3,  #0x1000
-    # armflt        movk w10, #0x4114, lsl #16
-    # armfltmovk    movk w24, #0x3b80, lsl #16
-    # armorr        orr w5, w5, #0x3f800000         GETS SUBSTITUTED FOR FMOV XD, #??.??????
-    # armrpl        fadd s0, s0, s1                 GETS SUBSTITUTED FOR FMOV XD, #??.??????
-    # dbl           000000E051B8AE3F
-    # flt           3F1DCDCC
-    # hexstring     CDCC8C3FE17AB43F0000C03F0000E03F6666E63F14AE873FB81EA53FCDCCAC3FF628DC3F0000E03F5C8F823F85EB913F5C8FA23F295CCF3F8FC2D53F85EB813F713D8A3F3333933FCDCCAC3F9A99B93FAE47813FB81E853F1F858B3F0000A03FB81EA53F
+            low = struct.unpack("<d", struct.pack("<d", float.fromhex('0' * hexLength)))[0]
+            high = struct.unpack("<d", struct.pack("<d", float.fromhex('f' * hexLength)))[0]
+            return [low, high]
+        case _:
+            return 'invalid'
 
+# def get_lib_values():
+# File paths for previously saved parameters
+paramsPath = 'libParams.json'
+badParamsPath = 'libBadParams.json'
+
+# Big thanks to Sergei Rivov for his exceptional API!
+reqUrl = 'http://152.67.78.6:8080/v2/addresses/by_version/?lib_version=8.4.400_rc19&allow_in_testing=true'
+
+# Check if file exists first so we don't smash Rivovs' API
+if os.path.isfile(paramsPath):
+    f = open(paramsPath)
+    libParams = json.load(f)
+else:
+    # File doesn't exist so call online API
+    with urllib.request.urlopen(reqUrl) as req:
+        libParams = json.load(req)
+
+# Sanitize item lists for items we can't handle automatically
+badTypes = ["HEXSTRING", "ARMMANUAL"]
+badParams = []
+
+# Loop through tunable dictionary
+for tunable in libParams.copy():
+    # Loop through known bad types
+    for substring in badTypes:
+        if tunable.get('arm_type').find(substring) != -1:
+            # Write bad ones out so we can save them later
+            print(tunable)
+            badParams.append(tunable)
+            # Then we can remove them from the dictionary
+            libParams.remove(tunable)
+            
+# Add additional fields we need for the auto-tune to work
+for tunable in libParams:
+    range = get_value_ranges(tunable.get('arm_type'),len(tunable.get('hex_original')))
+    tunable['range'] = [range[0],range[1]]
+
+# Sort dict by address as that's the most likely way they're called without relying on MemoryAccessMonitor
+# MemoryAccessMonitor hasn't been confirmed working at this stage
+libParams.sort(key=lambda x: x["address"])
+
+# Write values we CAN change automatically out to file so we don't smash Rivovs' API
+with open(paramsPath, "w") as outfile:
+    writeParams = json.dumps(libParams, ensure_ascii=True , indent=2)
+    outfile.write(writeParams)
+    
+# Write values we CAN'T change automatically so these can be manually split and/or fixed
+# Note that this writes in append mode - it's so it doesn't overwrite if there's no values in subsequent passes!
+with open(badParamsPath, "a") as outfile:
+    writeParams = json.dumps(badParams, ensure_ascii=True , indent=2)
+    outfile.write(writeParams)
+    
+# Pass dictionary through to the libpatcher
+fridaLibPatcher.lib_patcher("com.shamim.cam",libParams)

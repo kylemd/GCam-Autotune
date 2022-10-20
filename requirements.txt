@@ -4,3 +4,4 @@ git+https://github.com/chaofengc/IQA-PyTorch@main#egg=iqa-pytorch
 git+https://github.com/frida/frida-python@main#egg=frida
 git+https://github.com/frida/frida-tools@main#egg=frida-tools
 json
+adbutils
