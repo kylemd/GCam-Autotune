@@ -897,7 +897,8 @@
     "length_in_lib": 4,
     "hex_original": "7F520639",
     "extracted_value": "",
-    "added_by": null
+    "added_by": null,
+    "values": "7F520639, 7D520639"
   },
   {
     "id": 776,
@@ -987,7 +988,8 @@
     "length_in_lib": 3,
     "hex_original": "302E30",
     "extracted_value": "0",
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 170,
@@ -1002,7 +1004,8 @@
     "length_in_lib": 4,
     "hex_original": "CB100054",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 162,
@@ -1017,7 +1020,8 @@
     "length_in_lib": 4,
     "hex_original": "F503002A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 150,
@@ -1032,7 +1036,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 149,
@@ -1047,7 +1052,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 148,
@@ -1062,7 +1068,8 @@
     "length_in_lib": 4,
     "hex_original": "977A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 147,
@@ -1077,7 +1084,8 @@
     "length_in_lib": 4,
     "hex_original": "977A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 146,
@@ -1092,7 +1100,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 145,
@@ -1107,7 +1116,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 144,
@@ -1122,7 +1132,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 143,
@@ -1137,7 +1148,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 142,
@@ -1152,7 +1164,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 141,
@@ -1167,7 +1180,8 @@
     "length_in_lib": 4,
     "hex_original": "887A40B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 121,
@@ -1182,7 +1196,8 @@
     "length_in_lib": 4,
     "hex_original": "080140B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 103,
@@ -1197,7 +1212,8 @@
     "length_in_lib": 4,
     "hex_original": "9D6240B9",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 101,
@@ -1212,7 +1228,8 @@
     "length_in_lib": 4,
     "hex_original": "60110094",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 100,
@@ -1227,7 +1244,8 @@
     "length_in_lib": 4,
     "hex_original": "3C140094",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 98,
@@ -1242,7 +1260,8 @@
     "length_in_lib": 4,
     "hex_original": "7C5C0094",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 97,
@@ -1257,7 +1276,8 @@
     "length_in_lib": 4,
     "hex_original": "08686838",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 96,
@@ -1272,7 +1292,8 @@
     "length_in_lib": 4,
     "hex_original": "E8079F1A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 95,
@@ -1287,7 +1308,8 @@
     "length_in_lib": 4,
     "hex_original": "E8079F1A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 94,
@@ -1302,7 +1324,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 93,
@@ -1317,7 +1340,8 @@
     "length_in_lib": 4,
     "hex_original": "E8079F1A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 92,
@@ -1332,7 +1356,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 91,
@@ -1347,7 +1372,8 @@
     "length_in_lib": 4,
     "hex_original": "E8079F1A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 90,
@@ -1362,7 +1388,8 @@
     "length_in_lib": 4,
     "hex_original": "E8079F1A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 89,
@@ -1377,7 +1404,8 @@
     "length_in_lib": 4,
     "hex_original": "E8079F1A",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 88,
@@ -1392,7 +1420,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 87,
@@ -1407,7 +1436,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 86,
@@ -1422,7 +1452,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 85,
@@ -1437,7 +1468,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 84,
@@ -1452,7 +1484,8 @@
     "length_in_lib": 4,
     "hex_original": "420000B4",
     "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 83,
@@ -1467,22 +1500,8 @@
     "length_in_lib": 4,
     "hex_original": "400400BD",
     "extracted_value": null,
-    "added_by": 1
-  },
-  {
-    "id": 17,
-    "name": "Wavelet Luma Denoise Sabre Levels",
-    "lib_version": "8.4.400_rc19",
-    "arm_type": "ARMMANUAL",
-    "disasm": "HEX VALUE",
-    "added_on": "2022-07-01T09:39:05.045021",
-    "is_in_testing": false,
-    "description": "",
-    "address": "00AFCBC3",
-    "length_in_lib": 269,
-    "hex_original": "9A99993F15CDCC4C3E1D1093243F0A0F0D3333333F15CDCCCC3D1DD08A203F0A0F0D836FCD3E15CDCCCC3D1D54EEF13E0A0F0DE0790E3F15CDCCCC3D1D93D7B93E0A0A0D9142C23E1DAF3C9F3D000000000000000000000000000000000A0F0D9A99993F159A99193E1DAE50223F0A0F0DCDCC8C3F15CDCCCC3D1D95806D3E0A0F0D9A99993F150AD7A33D1D09997A3E0A0F0DCDCC8C3F158FC2F53D1D0E06743E0A0A0D0000803F1D68CEB13E000000000000000000000000000000000A0F0D9A99993F159A99193E1D14FA003F0A0F0D0000803F15CDCCCC3D1D49CCBD3E0A0F0D0000803F15CDCCCC3D1D37E0A43E0A0F0D3333333F15295C0F3E1D7B0A023F0A0A0DCDCCCC3D1DD1FF143F",
-    "extracted_value": null,
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   },
   {
     "id": 1,
@@ -1497,6 +1516,6 @@
     "length_in_lib": 9,
     "hex_original": "343131383936393036",
     "extracted_value": "411896906",
-    "added_by": 1
+    "added_by": 1,
+    "values": ""
   }
-][][][][][][][][][]

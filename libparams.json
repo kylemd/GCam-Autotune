@@ -570,6 +570,481 @@
     ]
   },
   {
+    "id": 0,
+    "name": "Exp Gain [0]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4C4",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "CDCC8C3F",
+    "extracted_value": 1.598029971,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Exp Gain [1]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4CC",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "E17AB43F",
+    "extracted_value": 1.958625674,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Exp Gain [2]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4D4",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "0000C03F",
+    "extracted_value": 0.005866885,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Exp Gain [3]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4DC",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "0000E03F",
+    "extracted_value": 0.006843448,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Exp Gain [4]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4E4",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "6666E63F",
+    "extracted_value": 1.803901553,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Exp Gain [5]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4EC",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "14AE873F",
+    "extracted_value": 1.363502383,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Exp Gain [6]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4F4",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "B81EA53F",
+    "extracted_value": 1.239417911,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Exp Gain [7]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF4FC",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "CDCCAC3F",
+    "extracted_value": 1.599006534,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Exp Gain [8]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF504",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "F628DC3F",
+    "extracted_value": 1.319221377,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Exp Gain [9]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF50C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "0000E03F",
+    "extracted_value": 0.006843448,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Exp Gain [10]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF514",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "5C8F823F",
+    "extracted_value": 1.121162295,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Exp Gain [11]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF51C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "85EB913F",
+    "extracted_value": 1.840370059,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Exp Gain [12]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF524",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "5C8FA23F",
+    "extracted_value": 1.122138858,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Exp Gain [13]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF52C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "295CCF3F",
+    "extracted_value": 1.725074649,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Exp Gain [14]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF534",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "8FC2D53F",
+    "extracted_value": 1.522132754,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Exp Gain [15]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF53C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "85EB813F",
+    "extracted_value": 1.839881778,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Exp Gain [16]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF544",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "713D8A3F",
+    "extracted_value": 1.480781436,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Exp Gain [17]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF54C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "3333933F",
+    "extracted_value": 1.402931094,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Exp Gain [18]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF554",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "CDCCAC3F",
+    "extracted_value": 1.599006534,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Exp Gain [19]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF55C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "9A99B93F",
+    "extracted_value": 1.200965762,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Exp Gain [20]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF564",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "AE47813F",
+    "extracted_value": 1.558631778,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Exp Gain [21]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF56C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "B81E853F",
+    "extracted_value": 1.238441348,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Exp Gain [22]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF574",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "1F858B3F",
+    "extracted_value": 1.043311954,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Exp Gain [23]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF57C",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "0000A03F",
+    "extracted_value": 0.004890323,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Exp Gain [24]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "",
+    "added_on": "11/10/2022",
+    "is_in_testing": true,
+    "address": "00AAF584",
+    "description": "Gain array, affects chdrness",
+    "length_in_lib": 8,
+    "hex_original": "B81EA53F",
+    "extracted_value": 1.239417911,
+    "added_by": "",
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
     "id": 1623,
     "name": "",
     "lib_version": "8.4.400_rc19",
