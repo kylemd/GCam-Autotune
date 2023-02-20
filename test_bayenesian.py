@@ -20,16 +20,17 @@ def OptimizeGCam(lower,upper):
 libparams = libapi.get_lib_values()
 
 for i in libparams:
-    optimizer = BayesianOptimization(
-        f=OptimizeGCam,
-        pbounds=i['range'],
-        verbose=2, # verbose = 1 prints only when a maximum is observed, verbose = 0 is silent
-        random_state=1,
-    )
+    print(i['range'])
+    # optimizer = BayesianOptimization(
+    #     f=OptimizeGCam,
+    #     pbounds=i['range'],
+    #     verbose=2, # verbose = 1 prints only when a maximum is observed, verbose = 0 is silent
+    #     random_state=1,
+    # )
 
-    optimizer.maximize(
-        init_points=1,
-        n_iter=20,
-    )
+    # optimizer.maximize(
+    #     init_points=1,
+    #     n_iter=20,
+    # )
 
-    print(optimizer.max)
+    # print(optimizer.max)

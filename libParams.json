@@ -1,0 +1,3308 @@
+[
+  {
+    "id": 2,
+    "name": "Zipper1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.939274",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00364818",
+    "length_in_lib": 4,
+    "hex_original": "00007A44",
+    "extracted_value": "1000",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Coef spatial",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.955694",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00364868",
+    "length_in_lib": 8,
+    "hex_original": "000080410000C03F",
+    "extracted_value": "0.12500003",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Zipper 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.948471",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00364868",
+    "length_in_lib": 4,
+    "hex_original": "00008041",
+    "extracted_value": "16",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Zipper 3",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.964651",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0036486C",
+    "length_in_lib": 4,
+    "hex_original": "0000C03F",
+    "extracted_value": "1.5",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 171,
+    "name": "Contrast 1/Coef. Sect",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:06.358071",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00364DE0",
+    "length_in_lib": 8,
+    "hex_original": "000000E051B8AE3F",
+    "extracted_value": "0.06",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Contrast black",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.971483",
+    "is_in_testing": false,
+    "description": "",
+    "address": "003654E4",
+    "length_in_lib": 4,
+    "hex_original": "0000803F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 7,
+    "name": "CF1 Green",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.978643",
+    "is_in_testing": false,
+    "description": "",
+    "address": "003655D8",
+    "length_in_lib": 4,
+    "hex_original": "3333933F",
+    "extracted_value": "1.14999998",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 8,
+    "name": "CF2 Red",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.985587",
+    "is_in_testing": false,
+    "description": "",
+    "address": "003655DC",
+    "length_in_lib": 4,
+    "hex_original": "0000803F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Contrast 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.991655",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00365AF0",
+    "length_in_lib": 8,
+    "hex_original": "000000C04517DD3F",
+    "extracted_value": "0.45454544",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Tuning ColorSatParams 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:04.998482",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00366188",
+    "length_in_lib": 4,
+    "hex_original": "0000803F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Tuning ColorSatParams 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.005121",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0036618C",
+    "length_in_lib": 4,
+    "hex_original": "8FC2D53F",
+    "extracted_value": "1.66999996",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 199,
+    "name": "CF3 - Blue/+Yellow",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:06.583664",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0036B910",
+    "length_in_lib": 4,
+    "hex_original": "27A0A9BE",
+    "extracted_value": "-0.33129999",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 200,
+    "name": "CF4 -Yellow/+Blue,Purple",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:06.590322",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0036B914",
+    "length_in_lib": 4,
+    "hex_original": "0000003F",
+    "extracted_value": "0.5",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 201,
+    "name": "CF5 -Green/+Red,Orange",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:06.598422",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0036B918",
+    "length_in_lib": 4,
+    "hex_original": "0000003F",
+    "extracted_value": "0.5",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 202,
+    "name": "CF6 -Orange,Red/+Green,Blue",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:06.604746",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0036B91C",
+    "length_in_lib": 4,
+    "hex_original": "D95FD6BE",
+    "extracted_value": "-0.41870001",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Smoothing the sabre",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.011446",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AF95B0",
+    "length_in_lib": 4,
+    "hex_original": "3333B33F",
+    "extracted_value": "1.39999998",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Sharp mini",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.018328",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AF95BC",
+    "length_in_lib": 4,
+    "hex_original": "6666A640",
+    "extracted_value": "5.19999981",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Smoothing new",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.024651",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AF95C0",
+    "length_in_lib": 4,
+    "hex_original": "17B75139",
+    "extracted_value": "0.0002",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Sabre sharp",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.032087",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AF95C8",
+    "length_in_lib": 4,
+    "hex_original": "66660640",
+    "extracted_value": "2.0999999",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Big sharp (sharp macro)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.038461",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AF95D4",
+    "length_in_lib": 4,
+    "hex_original": "3333B33F",
+    "extracted_value": "1.39999998",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Spatial denoise micro 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.052914",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AFE654",
+    "length_in_lib": 4,
+    "hex_original": "0000A040",
+    "extracted_value": "5",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Spatial denoise micro 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.058836",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AFE658",
+    "length_in_lib": 4,
+    "hex_original": "CDCC4C3F",
+    "extracted_value": "0.80000001",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Spatial denoise micro 3",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.066721",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AFE65C",
+    "length_in_lib": 4,
+    "hex_original": "0000A041",
+    "extracted_value": "20",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Spatial denoise micro 4",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "FLT",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.073217",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00AFE660",
+    "length_in_lib": 4,
+    "hex_original": "6666663F",
+    "extracted_value": "0.89999998",
+    "added_by": 1,
+    "range": [
+      0.0,
+      4294967295.0
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Sect [0]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.087349",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00638",
+    "length_in_lib": 8,
+    "hex_original": "0000000000000000",
+    "extracted_value": "0",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Sect [1]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.094938",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00640",
+    "length_in_lib": 8,
+    "hex_original": "A167B3EA73B5C53F",
+    "extracted_value": "0.1696",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sect [2]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.102132",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00648",
+    "length_in_lib": 8,
+    "hex_original": "A167B3EA73B5D53F",
+    "extracted_value": "0.3392",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Sect [3]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.108493",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00650",
+    "length_in_lib": 8,
+    "hex_original": "9BE61DA7E848E03F",
+    "extracted_value": "0.5089",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Sect [4]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.115204",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00658",
+    "length_in_lib": 8,
+    "hex_original": "83C0CAA145B6E53F",
+    "extracted_value": "0.6785",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Sect [5]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.121536",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00660",
+    "length_in_lib": 8,
+    "hex_original": "AE47E17A14AEEB3F",
+    "extracted_value": "0.865",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Sect [6]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.129597",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00668",
+    "length_in_lib": 8,
+    "hex_original": "000000000000F03F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Tone [0]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.143405",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00670",
+    "length_in_lib": 8,
+    "hex_original": "0000000000000000",
+    "extracted_value": "0",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Tone [1]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.150687",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00678",
+    "length_in_lib": 8,
+    "hex_original": "39B4C876BE9F8A3F",
+    "extracted_value": "0.013",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Tone [2]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.158194",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00680",
+    "length_in_lib": 8,
+    "hex_original": "295C8FC2F528AC3F",
+    "extracted_value": "0.055",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Tone [3]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.165518",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00688",
+    "length_in_lib": 8,
+    "hex_original": "C976BE9F1A2FBD3F",
+    "extracted_value": "0.114",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Tone [4]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.171611",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00690",
+    "length_in_lib": 8,
+    "hex_original": "5A643BDF4F8DC73F",
+    "extracted_value": "0.184",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Tone [5]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.178377",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00698",
+    "length_in_lib": 8,
+    "hex_original": "A245B6F3FDD4D03F",
+    "extracted_value": "0.263",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Tone [6]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.185559",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006A0",
+    "length_in_lib": 8,
+    "hex_original": "1283C0CAA145D63F",
+    "extracted_value": "0.348",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Tone [7]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.191878",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006A8",
+    "length_in_lib": 8,
+    "hex_original": "2DB29DEFA7C6DB3F",
+    "extracted_value": "0.434",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Tone [8]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.200092",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006B0",
+    "length_in_lib": 8,
+    "hex_original": "CFF753E3A59BE03F",
+    "extracted_value": "0.519",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Tone [9]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.206518",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006B8",
+    "length_in_lib": 8,
+    "hex_original": "08AC1C5A643BE33F",
+    "extracted_value": "0.601",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Tone [10]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.213874",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006C0",
+    "length_in_lib": 8,
+    "hex_original": "1904560E2DB2E53F",
+    "extracted_value": "0.678",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Tone [11]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.220100",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006C8",
+    "length_in_lib": 8,
+    "hex_original": "D578E9263108E83F",
+    "extracted_value": "0.751",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Tone [12]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.226106",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006D0",
+    "length_in_lib": 8,
+    "hex_original": "E9263108AC1CEA3F",
+    "extracted_value": "0.816",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Tone [13]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.234713",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006D8",
+    "length_in_lib": 8,
+    "hex_original": "000000000000EC3F",
+    "extracted_value": "0.875",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Tone [14]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.240387",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006E0",
+    "length_in_lib": 8,
+    "hex_original": "6F1283C0CAA1ED3F",
+    "extracted_value": "0.926",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Tone [15]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.250292",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006E8",
+    "length_in_lib": 8,
+    "hex_original": "355EBA490C02EF3F",
+    "extracted_value": "0.969",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Tone [16]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.259399",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006F0",
+    "length_in_lib": 8,
+    "hex_original": "000000000000F03F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Gamma [0]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.281168",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B006F8",
+    "length_in_lib": 8,
+    "hex_original": "0000000000000000",
+    "extracted_value": "0",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Gamma [1]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.289518",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00700",
+    "length_in_lib": 8,
+    "hex_original": "37548CF337A1703F",
+    "extracted_value": "0.00406",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Gamma [2]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.303774",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00708",
+    "length_in_lib": 8,
+    "hex_original": "51888043A852933F",
+    "extracted_value": "0.01887",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Gamma [3]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.314193",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00710",
+    "length_in_lib": 8,
+    "hex_original": "459E245D33F9A63F",
+    "extracted_value": "0.04487",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Gamma [4]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.323686",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00718",
+    "length_in_lib": 8,
+    "hex_original": "44FAEDEBC039B33F",
+    "extracted_value": "0.0751",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Gamma [5]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.332824",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00720",
+    "length_in_lib": 8,
+    "hex_original": "3108AC1C5A64BB3F",
+    "extracted_value": "0.107",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Gamma [6]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.341724",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00728",
+    "length_in_lib": 8,
+    "hex_original": "5227A089B0E1C13F",
+    "extracted_value": "0.1397",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Gamma [7]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.350046",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00730",
+    "length_in_lib": 8,
+    "hex_original": "99D87C5C1B2AC63F",
+    "extracted_value": "0.17316",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Gamma [8]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.358764",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00738",
+    "length_in_lib": 8,
+    "hex_original": "643BDF4F8D97CA3F",
+    "extracted_value": "0.20775",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Gamma [9]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.370149",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00740",
+    "length_in_lib": 8,
+    "hex_original": "B08F4E5DF92CCF3F",
+    "extracted_value": "0.24356",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Gamma [10]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.377113",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00748",
+    "length_in_lib": 8,
+    "hex_original": "BB0A293FA9F6D13F",
+    "extracted_value": "0.28068",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Gamma [11]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.385159",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00750",
+    "length_in_lib": 8,
+    "hex_original": "983446EBA86AD43F",
+    "extracted_value": "0.31901",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Gamma [12]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.391471",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00758",
+    "length_in_lib": 8,
+    "hex_original": "29D027F224E9D63F",
+    "extracted_value": "0.35798",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Gamma [13]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.401926",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00760",
+    "length_in_lib": 8,
+    "hex_original": "003ACC971760D93F",
+    "extracted_value": "0.39649",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Gamma [14]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.410580",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00768",
+    "length_in_lib": 8,
+    "hex_original": "2DB29DEFA7C6DB3F",
+    "extracted_value": "0.434",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Gamma [15]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.419387",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00770",
+    "length_in_lib": 8,
+    "hex_original": "50FC1873D712DE3F",
+    "extracted_value": "0.4699",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Gamma [16]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.428331",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00778",
+    "length_in_lib": 8,
+    "hex_original": "295C8FC2F528E03F",
+    "extracted_value": "0.505",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Gamma [17]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.436326",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00780",
+    "length_in_lib": 8,
+    "hex_original": "A1D634EF3845E13F",
+    "extracted_value": "0.5397",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Gamma [18]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.444547",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00788",
+    "length_in_lib": 8,
+    "hex_original": "91ED7C3F355EE23F",
+    "extracted_value": "0.574",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Gamma [19]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.459911",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00790",
+    "length_in_lib": 8,
+    "hex_original": "6A4DF38E5374E33F",
+    "extracted_value": "0.60795",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Gamma [20]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.474192",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B00798",
+    "length_in_lib": 8,
+    "hex_original": "BA490C022B87E43F",
+    "extracted_value": "0.6415",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Gamma [21]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.487989",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007A0",
+    "length_in_lib": 8,
+    "hex_original": "2FDD24068195E53F",
+    "extracted_value": "0.6745",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Gamma [22]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.503250",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007A8",
+    "length_in_lib": 8,
+    "hex_original": "39B4C876BE9FE63F",
+    "extracted_value": "0.707",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Gamma [23]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.516598",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007B0",
+    "length_in_lib": 8,
+    "hex_original": "D9CEF753E3A5E73F",
+    "extracted_value": "0.739",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Gamma [24]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.531387",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007B8",
+    "length_in_lib": 8,
+    "hex_original": "0E2DB29DEFA7E83F",
+    "extracted_value": "0.7705",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Gamma [25]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.545167",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007C0",
+    "length_in_lib": 8,
+    "hex_original": "D9CEF753E3A5E93F",
+    "extracted_value": "0.8015",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Gamma [26]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.558247",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007C8",
+    "length_in_lib": 8,
+    "hex_original": "39B4C876BE9FEA3F",
+    "extracted_value": "0.832",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Gamma [27]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.571703",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007D0",
+    "length_in_lib": 8,
+    "hex_original": "4D840D4FAF94EB3F",
+    "extracted_value": "0.8619",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Gamma [28]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.584234",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007D8",
+    "length_in_lib": 8,
+    "hex_original": "508D976E1283EC3F",
+    "extracted_value": "0.891",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Gamma [29]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.597030",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007E0",
+    "length_in_lib": 8,
+    "hex_original": "D712F241CF66ED3F",
+    "extracted_value": "0.9188",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Gamma [30]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.612783",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007E8",
+    "length_in_lib": 8,
+    "hex_original": "1283C0CAA145EE3F",
+    "extracted_value": "0.946",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Gamma [31]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.626176",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007F0",
+    "length_in_lib": 8,
+    "hex_original": "8811C2A38D23EF3F",
+    "extracted_value": "0.97309",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Gamma [32]",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "DBL",
+    "disasm": "HEX VALUE",
+    "added_on": "2022-07-01T09:39:05.640941",
+    "is_in_testing": false,
+    "description": "",
+    "address": "00B007F8",
+    "length_in_lib": 8,
+    "hex_original": "000000000000F03F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      18446744073709551615
+    ]
+  },
+  {
+    "id": 82,
+    "name": "BuildPayloadBurstSpecOptions MaxExposureTimeMs",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLTMOVK",
+    "disasm": "movk w0, #0x3f80, lsl #16",
+    "added_on": "2022-07-01T09:39:05.654671",
+    "is_in_testing": false,
+    "description": "",
+    "address": "011E3988",
+    "length_in_lib": 4,
+    "hex_original": "00F0A772",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 178,
+    "name": "Smoothness",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #2.00000000",
+    "added_on": "2022-07-01T09:39:06.408718",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01255FD4",
+    "length_in_lib": 4,
+    "hex_original": "0010201E",
+    "extracted_value": "2",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Sabre sharp 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.826509",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01EDE564",
+    "length_in_lib": 4,
+    "hex_original": "00102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 184,
+    "name": "Shasta BaseFrameSharpness Threshold",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0x3f4c, lsl #16",
+    "added_on": "2022-07-01T09:39:06.469062",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01EEAEC0",
+    "length_in_lib": 4,
+    "hex_original": "88E9A772",
+    "extracted_value": "0.796875",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Shasta DiscardFrames BaseFrameSharpness",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmul s9, s9, s0",
+    "added_on": "2022-07-01T09:39:05.849016",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01EEB288",
+    "length_in_lib": 4,
+    "hex_original": "2909201E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Sharpness A",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.2d, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.862142",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC1F8",
+    "length_in_lib": 4,
+    "hex_original": "00F6036F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Sharpness B outline",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.868658",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC1FC",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Sharp gain",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movz w8, #0xbf80, lsl #16",
+    "added_on": "2022-07-01T09:39:05.875276",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC294",
+    "length_in_lib": 4,
+    "hex_original": "08F0B752",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Sharp gain micro",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movz w8, #0x4120, lsl #16",
+    "added_on": "2022-07-01T09:39:05.883950",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC328",
+    "length_in_lib": 4,
+    "hex_original": "0824A852",
+    "extracted_value": "10",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Sharp gain macro",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movz w8, #0x4120, lsl #16",
+    "added_on": "2022-07-01T09:39:05.890401",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC3BC",
+    "length_in_lib": 4,
+    "hex_original": "0824A852",
+    "extracted_value": "10",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Denoise ",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.898013",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC5D8",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Luma A",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.2d, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.912200",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC77C",
+    "length_in_lib": 4,
+    "hex_original": "00F6036F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Luma B",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.920342",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC780",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Chroma (spatial) (Temporal A)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.2d, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.933984",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC818",
+    "length_in_lib": 4,
+    "hex_original": "00F6036F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Chroma (spatial) (Temporal B)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.942236",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC81C",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Spatial A",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.2d, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.953118",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC8B4",
+    "length_in_lib": 4,
+    "hex_original": "00F6036F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Spatial B",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.960986",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC8B8",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Chroma Denoise A",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.2d, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.973244",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC950",
+    "length_in_lib": 4,
+    "hex_original": "00F6036F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Chroma Denoise B",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.982514",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC954",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Dehaze",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:05.989580",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBC9EC",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Saturation",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0x3ff0, lsl #48",
+    "added_on": "2022-07-01T09:39:06.003650",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBCA80",
+    "length_in_lib": 4,
+    "hex_original": "08FEE7D2",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Shadows Compensation",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "ldr s10, [x24, #0xa54]",
+    "added_on": "2022-07-01T09:39:06.010554",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBDAA8",
+    "length_in_lib": 4,
+    "hex_original": "0A574ABD",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 172,
+    "name": "Sharpening Edge",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s3, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.365380",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBEC90",
+    "length_in_lib": 4,
+    "hex_original": "03102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 173,
+    "name": "Soft Sharp a (high sharp)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmul d3, d3, d6",
+    "added_on": "2022-07-01T09:39:06.371740",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBED44",
+    "length_in_lib": 4,
+    "hex_original": "6308661E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 174,
+    "name": "Soft Sharp b (medium sharp)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmul d4, d4, d6",
+    "added_on": "2022-07-01T09:39:06.377583",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBED48",
+    "length_in_lib": 4,
+    "hex_original": "8408661E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 175,
+    "name": "Soft Sharp c (low sharp)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmul d5, d5, d6",
+    "added_on": "2022-07-01T09:39:06.384081",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBED88",
+    "length_in_lib": 4,
+    "hex_original": "A508661E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Clarity",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s8, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.024018",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FBF724",
+    "length_in_lib": 4,
+    "hex_original": "08102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Shadow tuning",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #0.25000000",
+    "added_on": "2022-07-01T09:39:06.031269",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FE0390",
+    "length_in_lib": 4,
+    "hex_original": "01102A1E",
+    "extracted_value": "0.25",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 789,
+    "name": "BuildFinishCurves HDR Ratio",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "ldr s0, [sp, #0x11dc]",
+    "added_on": "2022-07-15T08:33:25.453671",
+    "is_in_testing": false,
+    "description": "\u0416\u0435\u0441\u0442\u043a\u043e \u0432\u044b\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043d\u0443\u0436\u043d\u044b\u0439 hdr ratio. \u041c\u0435\u043d\u044c\u0448\u0435 = \u0442\u0435\u043c\u043d\u0435\u0435. \u041d\u0435 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043c\u0435\u043d\u044c\u0448\u0435 1",
+    "address": "01FE08B0",
+    "length_in_lib": 4,
+    "hex_original": "E0DF51BD",
+    "extracted_value": "",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 124,
+    "name": "White Level",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLTMOVK",
+    "disasm": "movk w26, #0x3d2a, lsl #16",
+    "added_on": "2022-07-01T09:39:06.039138",
+    "is_in_testing": false,
+    "description": "",
+    "address": "01FF47F0",
+    "length_in_lib": 4,
+    "hex_original": "5AA5A772",
+    "extracted_value": "0.04150391",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 125,
+    "name": "HDR Effect",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s10, wzr",
+    "added_on": "2022-07-01T09:39:06.047711",
+    "is_in_testing": false,
+    "description": "",
+    "address": "020ECAB0",
+    "length_in_lib": 4,
+    "hex_original": "EA03271E",
+    "extracted_value": "0",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 802,
+    "name": "Highlight compensation 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "scvtf s2, w9",
+    "added_on": "2022-07-17T09:28:44.549948",
+    "is_in_testing": false,
+    "description": "\u041c\u0435\u043d\u044c\u0448\u0435 = \u0441\u0432\u0435\u0442\u043b\u0435\u0435 \u043d\u0435\u0431\u043e. \u041f\u0435\u0440\u0435\u0437\u0430\u043f\u0438\u0441\u044b\u0432\u0430\u0435\u0442 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u0430. \u041d\u0430 \u043d\u0438\u0437\u043a\u0438\u0445 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u0445 \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u043d\u0430 \u0437\u0430\u0441\u0432\u0435\u0442\u0430\u0445",
+    "address": "020EE2AC",
+    "length_in_lib": 4,
+    "hex_original": "2201221E",
+    "extracted_value": "",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Highlight compensation",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDEC",
+    "disasm": "movz w9, #0x1000",
+    "added_on": "2022-07-01T09:39:06.055193",
+    "is_in_testing": false,
+    "description": "",
+    "address": "020EE320",
+    "length_in_lib": 4,
+    "hex_original": "09008252",
+    "extracted_value": "4096",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 186,
+    "name": "OptimizeToneCurves 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #-1.00000000",
+    "added_on": "2022-07-01T09:39:06.488790",
+    "is_in_testing": false,
+    "description": "",
+    "address": "020EE5A4",
+    "length_in_lib": 4,
+    "hex_original": "00103E1E",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Volume Processing 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s13, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.062617",
+    "is_in_testing": false,
+    "description": "",
+    "address": "020F0664",
+    "length_in_lib": 4,
+    "hex_original": "0D102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Volume Processing 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmax s0, s0, s13",
+    "added_on": "2022-07-01T09:39:06.069375",
+    "is_in_testing": false,
+    "description": "",
+    "address": "020F0668",
+    "length_in_lib": 4,
+    "hex_original": "00482D1E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 725,
+    "name": "HDR Brightness",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s9, #1.00000000",
+    "added_on": "2022-07-04T12:09:44.114609",
+    "is_in_testing": false,
+    "description": "",
+    "address": "020F22F4",
+    "length_in_lib": 4,
+    "hex_original": "09102E1E",
+    "extracted_value": "1.00000000",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 236,
+    "name": "Sky change brightness bias",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #0.50000000",
+    "added_on": "2022-07-01T09:39:06.848824",
+    "is_in_testing": false,
+    "description": "\u0412\u043b\u0438\u044f\u0435\u0442 \u043d\u0430 \u043d\u0435\u0431\u043e \u0432 \u043d\u043e\u0447\u043d\u043e\u043c/\u0430\u0441\u0442\u0440\u043e",
+    "address": "02119608",
+    "length_in_lib": 4,
+    "hex_original": "01102C1E",
+    "extracted_value": "0.5",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Chroma noise / Smoothing 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0xbff0, lsl #48",
+    "added_on": "2022-07-01T09:39:06.076763",
+    "is_in_testing": false,
+    "description": "",
+    "address": "027FF208",
+    "length_in_lib": 4,
+    "hex_original": "08FEF7D2",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Spatial coef / Smoothing 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movz x8, #0xbff0, lsl #48",
+    "added_on": "2022-07-01T09:39:06.083985",
+    "is_in_testing": false,
+    "description": "",
+    "address": "027FF29C",
+    "length_in_lib": 4,
+    "hex_original": "08FEF7D2",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 187,
+    "name": "GetMergedNoiseModelBayer (Merge1)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s2, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.495884",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0280055C",
+    "length_in_lib": 4,
+    "hex_original": "02102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Sabre sharp 3",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fdiv s0, s0, s2",
+    "added_on": "2022-07-01T09:39:06.090573",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0280C468",
+    "length_in_lib": 4,
+    "hex_original": "0018221E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Sabre 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #-1.00000000",
+    "added_on": "2022-07-01T09:39:06.097210",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0280E170",
+    "length_in_lib": 4,
+    "hex_original": "01103E1E",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Sabre noise artifacts",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "ldr s2, [x19, #8]",
+    "added_on": "2022-07-01T09:39:06.103645",
+    "is_in_testing": false,
+    "description": "covariance_parameters DENOISE_GRADIENT_THRESHOLD",
+    "address": "02813648",
+    "length_in_lib": 4,
+    "hex_original": "620A40BD",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 134,
+    "name": "Fix denoise sabre",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0x38d1, lsl #16",
+    "added_on": "2022-07-01T09:39:06.110685",
+    "is_in_testing": false,
+    "description": "",
+    "address": "028138E0",
+    "length_in_lib": 4,
+    "hex_original": "281AA772",
+    "extracted_value": "0.00009966",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Savannah Merge Chroma Denoise (Merge2)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s8, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.117123",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02819224",
+    "length_in_lib": 4,
+    "hex_original": "08102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 179,
+    "name": "Temporal Radius",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movz w12, #0x4380, lsl #16",
+    "added_on": "2022-07-01T09:39:06.418307",
+    "is_in_testing": false,
+    "description": "",
+    "address": "028417A4",
+    "length_in_lib": 4,
+    "hex_original": "0C70A852",
+    "extracted_value": "256",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Sabre Contrast Sharp",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #2.00000000",
+    "added_on": "2022-07-01T09:39:06.124360",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02910BCC",
+    "length_in_lib": 4,
+    "hex_original": "0110201E",
+    "extracted_value": "2",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Sabre Contrast",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.131793",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02910BDC",
+    "length_in_lib": 4,
+    "hex_original": "01102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Shasta MaxRelativeTetFactor for Sabre",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #2.00000000",
+    "added_on": "2022-07-01T09:39:06.137841",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02971F78",
+    "length_in_lib": 4,
+    "hex_original": "0010201E",
+    "extracted_value": "2",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 139,
+    "name": "ISO (Max overall gain)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movz w9, #0x42cc, lsl #16",
+    "added_on": "2022-07-01T09:39:06.144090",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02974500",
+    "length_in_lib": 4,
+    "hex_original": "8959A852",
+    "extracted_value": "102",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Tuning Night Mode Gain Multiplier",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLTMOVK",
+    "disasm": "movz w9, #0x4020, lsl #16",
+    "added_on": "2022-07-01T09:39:06.151231",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02974548",
+    "length_in_lib": 4,
+    "hex_original": "0904A852",
+    "extracted_value": "2.5",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 185,
+    "name": "Tuning DenoiseParams_Level Chroma",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #6.00000000",
+    "added_on": "2022-07-01T09:39:06.478043",
+    "is_in_testing": false,
+    "description": "\u0426\u0432\u0435\u0442\u043d\u043e\u0439 \u0448\u0443\u043c\u043e\u0434\u0430\u0432, \u043c\u0435\u043d\u044c\u0448\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 = \u0431\u043e\u043b\u044c\u0448\u0435 \u0446\u0432\u0435\u0442\u0430",
+    "address": "029748D4",
+    "length_in_lib": 4,
+    "hex_original": "0010231E",
+    "extracted_value": "6",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 1069,
+    "name": "Tuning [slider, raven, oriole] Sensitivity",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0x414f, lsl #16",
+    "added_on": "2022-08-04T08:29:24.058510",
+    "is_in_testing": false,
+    "description": "\u041c\u0435\u043d\u044c\u0448\u0435 = \u0441\u0432\u0435\u0442\u043b\u0435\u0435 \u0447\u0435\u0440\u0435\u0437 \u0443\u0432\u0435\u043b\u0438\u0447\u0435\u043d\u0438\u0435 \u0438\u0441\u043e. \u0422\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u043c\u043e\u0434\u0435\u043b\u0435\u0439 \u041f6 \u0441 \u0441\u0435\u043d\u0441\u043e\u0440\u043e\u043c 0",
+    "address": "02978D0C",
+    "length_in_lib": 4,
+    "hex_original": "E829A872",
+    "extracted_value": "12.93750000",
+    "added_by": null,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 151,
+    "name": "P6 Tuning Night Mode Gain Multiplier",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLTMOVK",
+    "disasm": "movz w8, #0x40a0, lsl #16",
+    "added_on": "2022-07-01T09:39:06.223908",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02979B50",
+    "length_in_lib": 4,
+    "hex_original": "0814A852",
+    "extracted_value": "5",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 152,
+    "name": "Exposition (Max HDR ratio) uxmode = 4",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0x418f, lsl #16",
+    "added_on": "2022-07-01T09:39:06.230584",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02979D40",
+    "length_in_lib": 4,
+    "hex_original": "E931A872",
+    "extracted_value": "17.875",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 153,
+    "name": "Exposition (Max HDR ratio)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #11.50000000",
+    "added_on": "2022-07-01T09:39:06.236450",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02979D48",
+    "length_in_lib": 4,
+    "hex_original": "00F0241E",
+    "extracted_value": "11.5",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Exposition (Max HDR ratio) uxmode = 5",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w10, #0x4114, lsl #16",
+    "added_on": "2022-07-01T09:39:06.242471",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02979D4C",
+    "length_in_lib": 4,
+    "hex_original": "8A22A872",
+    "extracted_value": "9.25",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 192,
+    "name": "CG1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0xbed1, lsl #16",
+    "added_on": "2022-07-01T09:39:06.533699",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA28",
+    "length_in_lib": 4,
+    "hex_original": "28DAB772",
+    "extracted_value": "-0.40820312",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 155,
+    "name": "CG2 Blue Correction",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0x3f51, lsl #16",
+    "added_on": "2022-07-01T09:39:06.251306",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA2C",
+    "length_in_lib": 4,
+    "hex_original": "29EAA772",
+    "extracted_value": "0.81640625",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 198,
+    "name": "CG9",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0xbe4c, lsl #16",
+    "added_on": "2022-07-01T09:39:06.576631",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA40",
+    "length_in_lib": 4,
+    "hex_original": "88C9B772",
+    "extracted_value": "-0.19921875",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 193,
+    "name": "CG3",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0x3e8a, lsl #16",
+    "added_on": "2022-07-01T09:39:06.541550",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA44",
+    "length_in_lib": 4,
+    "hex_original": "49D1A772",
+    "extracted_value": "0.26953125",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 191,
+    "name": "CG10",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0xbf47, lsl #16",
+    "added_on": "2022-07-01T09:39:06.525649",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA58",
+    "length_in_lib": 4,
+    "hex_original": "E8E8B772",
+    "extracted_value": "-0.77734375",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 194,
+    "name": "CG4",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0x3e3c, lsl #16",
+    "added_on": "2022-07-01T09:39:06.548966",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA5C",
+    "length_in_lib": 4,
+    "hex_original": "89C7A772",
+    "extracted_value": "0.18359375",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 195,
+    "name": "CG5",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0x3f18, lsl #16",
+    "added_on": "2022-07-01T09:39:06.555701",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BA7C",
+    "length_in_lib": 4,
+    "hex_original": "09E3A772",
+    "extracted_value": "0.59375",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 196,
+    "name": "CG6",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0x3e61, lsl #16",
+    "added_on": "2022-07-01T09:39:06.564626",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BAA8",
+    "length_in_lib": 4,
+    "hex_original": "29CCA772",
+    "extracted_value": "0.21972656",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 197,
+    "name": "CG7",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w9, #0xbe96, lsl #16",
+    "added_on": "2022-07-01T09:39:06.570717",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0297BB90",
+    "length_in_lib": 4,
+    "hex_original": "C9D2B772",
+    "extracted_value": "-0.29296875",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 805,
+    "name": "SplitHDRImage Exposition",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s3, #16.00000000",
+    "added_on": "2022-07-17T16:07:39.091362",
+    "is_in_testing": false,
+    "description": "\u041c\u0435\u043d\u044c\u0448\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 = \u0434\u043e\u043b\u044c\u0448\u0435 \u0432\u044b\u0434\u0435\u0440\u0436\u043a\u0430 = \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0430 \u0441\u0432\u0435\u0442\u043b\u0435\u0435 \u0441 \u0437\u0430\u0441\u0432\u0435\u0442\u0430\u043c\u0438",
+    "address": "02986d10",
+    "length_in_lib": 4,
+    "hex_original": "0310261E",
+    "extracted_value": "16.00000000",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 156,
+    "name": "ExpoComp",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLTMOVK",
+    "disasm": "movk w24, #0x3b80, lsl #16",
+    "added_on": "2022-07-01T09:39:06.256963",
+    "is_in_testing": false,
+    "description": "\u041c\u0435\u043d\u044c\u0448\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435= \u0441\u0438\u043b\u044c\u043d\u0435\u0435 \u0432\u044b\u0431\u0438\u0442\u044b\u0439 \u0441\u0432\u0435\u0442",
+    "address": "02987E28",
+    "length_in_lib": 4,
+    "hex_original": "1870A772",
+    "extracted_value": "0.00390625",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 157,
+    "name": "HDR Range -",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s2, #-1.00000000",
+    "added_on": "2022-07-01T09:39:06.264878",
+    "is_in_testing": false,
+    "description": "",
+    "address": "029884AC",
+    "length_in_lib": 4,
+    "hex_original": "02103E1E",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 158,
+    "name": "HDR Range +",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s2, #8.50000000",
+    "added_on": "2022-07-01T09:39:06.270849",
+    "is_in_testing": false,
+    "description": "",
+    "address": "029884B8",
+    "length_in_lib": 4,
+    "hex_original": "0230241E",
+    "extracted_value": "8.5",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 159,
+    "name": "LDR",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmul d0, d0, d2",
+    "added_on": "2022-07-01T09:39:06.278208",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0299CF40",
+    "length_in_lib": 4,
+    "hex_original": "0008621E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 160,
+    "name": "HDR Softness (Sect)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk x22, #0x40af, lsl #48",
+    "added_on": "2022-07-01T09:39:06.284694",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0299D610",
+    "length_in_lib": 4,
+    "hex_original": "F615E8F2",
+    "extracted_value": "3968",
+    "added_by": 1,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 827,
+    "name": "HDR Softness (Tone)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movk x22, #0x40af, lsl #48",
+    "added_on": "2022-07-28T08:08:42.719284",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0299D800",
+    "length_in_lib": 4,
+    "hex_original": "F615E8F2",
+    "extracted_value": "3968.00000000",
+    "added_by": null,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 818,
+    "name": "HDR Softness (Gamma)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMDBL",
+    "disasm": "movk x25, #0x40af, lsl #48",
+    "added_on": "2022-07-21T11:15:55.425507",
+    "is_in_testing": false,
+    "description": "",
+    "address": "0299D91C",
+    "length_in_lib": 4,
+    "hex_original": "F915E8F2",
+    "extracted_value": "3968.00000000",
+    "added_by": null,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 161,
+    "name": "TET Factor tuning",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmaxnm s1, s1, s9",
+    "added_on": "2022-07-01T09:39:06.290870",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02A5D620",
+    "length_in_lib": 4,
+    "hex_original": "2168291E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 1392,
+    "name": "Compute Safe Underexposure",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fmaxnm s8, s14, s0",
+    "added_on": "2022-08-27T08:27:39.103448",
+    "is_in_testing": false,
+    "description": "safe underexposure, \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043d\u0435 \u0432\u0441\u0435\u0433\u0434\u0430, \u0431\u043e\u043b\u044c\u0448\u0435 = \u0441\u0432\u0435\u0442\u043b\u0435\u0435, \u043d\u0430 0 \u0437\u0430\u0442\u0432\u043e\u0440 \u0443\u043c\u0435\u0440",
+    "address": "02A668FC",
+    "length_in_lib": 4,
+    "hex_original": "C869201E",
+    "extracted_value": "",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 1139,
+    "name": "Highlight contrast",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s5, #1.00000000",
+    "added_on": "2022-08-19T07:47:27.494810",
+    "is_in_testing": false,
+    "description": "\u0411\u043e\u043b\u044c\u0448\u0435 = \u0441\u0432\u0435\u0442\u043b\u0435\u0435 \u043d\u0435\u0431\u043e",
+    "address": "02B823E4",
+    "length_in_lib": 4,
+    "hex_original": "05102E1E",
+    "extracted_value": "1.00000000",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 1057,
+    "name": "MeasureMeanSignalLevel",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "scvtf d1, w20",
+    "added_on": "2022-08-04T05:32:36.905908",
+    "is_in_testing": false,
+    "description": "\u041c\u0435\u043d\u044c\u0448\u0435 = \u0440\u0435\u0437\u0447\u0435",
+    "address": "02B83288",
+    "length_in_lib": 4,
+    "hex_original": "8102621E",
+    "extracted_value": "",
+    "added_by": null,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 163,
+    "name": "Sharp Depth 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s3, #0.50000000",
+    "added_on": "2022-07-01T09:39:06.303284",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02B9832C",
+    "length_in_lib": 4,
+    "hex_original": "03102C1E",
+    "extracted_value": "0.5",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 164,
+    "name": "Sharp Depth 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s4, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.309486",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02B98330",
+    "length_in_lib": 4,
+    "hex_original": "04102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 165,
+    "name": "Lut noise fix",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "fsqrt s12, s0",
+    "added_on": "2022-07-01T09:39:06.317190",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02C9EEC4",
+    "length_in_lib": 4,
+    "hex_original": "0CC0211E",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 176,
+    "name": "Exposure Darker 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s2, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.390452",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CA1A54",
+    "length_in_lib": 4,
+    "hex_original": "02102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 177,
+    "name": "Exposure Darker 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #0.50000000",
+    "added_on": "2022-07-01T09:39:06.401131",
+    "is_in_testing": false,
+    "description": ".",
+    "address": "02CA1B10",
+    "length_in_lib": 4,
+    "hex_original": "01102C1E",
+    "extracted_value": "0.5",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 1395,
+    "name": "Unsafe Underexposure",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMFLT",
+    "disasm": "movk w8, #0x3f8c, lsl #16",
+    "added_on": "2022-08-27T08:41:53.614454",
+    "is_in_testing": false,
+    "description": "unsafe underexposure, \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043d\u0435 \u0432\u0441\u0435\u0433\u0434\u0430",
+    "address": "02CE5E6C",
+    "length_in_lib": 4,
+    "hex_original": "88F1A772",
+    "extracted_value": "1.09375000",
+    "added_by": null,
+    "range": [
+      0,
+      65535
+    ]
+  },
+  {
+    "id": 166,
+    "name": "Better color wiener (Merge1)",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov d1, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.324183",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF41A8",
+    "length_in_lib": 4,
+    "hex_original": "01106E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 167,
+    "name": "Shot Noise Factor",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "ldr s0, [x9, x0, lsl #2]",
+    "added_on": "2022-07-01T09:39:06.331801",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF5740",
+    "length_in_lib": 4,
+    "hex_original": "207960BC",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 168,
+    "name": "Noise Model Shot Var",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "ldr s8, [x8, w1, sxtw #2]",
+    "added_on": "2022-07-01T09:39:06.338853",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF58C4",
+    "length_in_lib": 4,
+    "hex_original": "08D961BC",
+    "extracted_value": null,
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 169,
+    "name": "Luma noise",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.4s, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.345338",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF7040",
+    "length_in_lib": 4,
+    "hex_original": "00F6034F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 188,
+    "name": "HDR sabre calc val 1",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov v0.4s, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.502307",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF71CC",
+    "length_in_lib": 4,
+    "hex_original": "00F6034F",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 189,
+    "name": "HDR sabre calc val 2",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s13, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.508915",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF740C",
+    "length_in_lib": 4,
+    "hex_original": "0D102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 180,
+    "name": "Luma Denoise New A",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s1, #1.00000000",
+    "added_on": "2022-07-01T09:39:06.426768",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF83F0",
+    "length_in_lib": 4,
+    "hex_original": "01102E1E",
+    "extracted_value": "1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  },
+  {
+    "id": 181,
+    "name": "Luma Denoise New B",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARM",
+    "disasm": "fmov s2, #-1.00000000",
+    "added_on": "2022-07-01T09:39:06.437373",
+    "is_in_testing": false,
+    "description": "",
+    "address": "02CF83F4",
+    "length_in_lib": 4,
+    "hex_original": "02103E1E",
+    "extracted_value": "-1",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  }
+]

@@ -2,7 +2,6 @@ import json
 import os
 import urllib.request
 import struct
-import ops_FridaPatcher
 
 def get_value_ranges(armType,hexLength):
     
@@ -87,3 +86,5 @@ def get_lib_values():
             outfile.write(writeParams)
         
     return libParams
+
+get_lib_values()

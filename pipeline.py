@@ -5,11 +5,6 @@ import threading
 import ops_ADB as ctrl
 import ops_FridaPatcher as patch
 
-package = 'com.shamim.cam'
-activity = "com.android.camera.CameraLauncher"
-output_dir = '/sdcard/DCIM/Camera'
-output_format = 'jpg'
-
 # Start device
 
 def initialise_device():
