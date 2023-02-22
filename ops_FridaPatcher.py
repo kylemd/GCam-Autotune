@@ -14,7 +14,7 @@ def swap_endianness(hexstring):
 	ba.reverse()
 	return ba.hex()
 
-# Function to start the remote Frida instance and patch the lib
+# Function to start the remote Frida instance
 def load_hook(packageName):
 
 	# Frida - Connect to device and spawn package

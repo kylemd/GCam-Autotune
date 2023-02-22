@@ -2,10 +2,6 @@ import os
 import time
 import adbutils
 
-###############################################################################
-# Connect phone via USB ADB #### TESTED OK
-###############################################################################
-
 def ConnectDevice():
     # #Wait for user to connect
     # print('Ensure your device is plugged in via USB. Then press enter.')
@@ -44,10 +40,6 @@ def ConnectDevice():
     print('Successfully connected to ' + str(device.serial))
     return device
 
-###############################################################################
-# Get the package name of the camera to use #### WORKING OK
-###############################################################################
-
 def GetCameraPackageName(device):
     package_list = device.list_packages()
 
@@ -64,24 +56,11 @@ def GetCameraPackageName(device):
     package_name = package_list[pkg_selection]
     return package_name
 
-
-###############################################################################
-# Start the camera #### WORKING OK
-###############################################################################
-
 def StartCamera(device,package,activity):
     device.shell("am start -n {}/{}".format(package,activity))
 
-###############################################################################
-# Take a photo #### TESTED OK
-###############################################################################
-
 def TakePhoto(device):
     device.keyevent("KEYCODE_CAMERA")
-
-###############################################################################
-# Check if app is running #### TESTED OK
-###############################################################################
 
 def CheckAppRunning(device,package):
     status = device.shell("pidof {}".format(package))
@@ -91,17 +70,9 @@ def CheckAppRunning(device,package):
     else:
         return True
 
-###############################################################################
-# Check if photo has finished writing #### TESTED OK
-###############################################################################
-
 def GetPhotoPath(device,directory,format):
     new_file = device.shell("find {} -name '*.{}' -a -not -name '*pending*' -mtime -15s -mtime +2s".format(directory,format))
     return new_file
-
-###############################################################################
-# Wait for photo to write and return filename #### TESTED OK
-###############################################################################
 
 def WaitForNewFile(device, output_dir, output_format, package):
     
@@ -122,18 +93,9 @@ def WaitForNewFile(device, output_dir, output_format, package):
 
     return 0  # process_running returned false, i.e. crashed
 
-###############################################################################
-# Copy newly created DNG to PC # WORKING OK
-###############################################################################
-
 def PullImage(device,pathname,destfile):
-
     #Pull new dng and name in appropriately
     device.sync.pull(pathname,destfile)
-
-###############################################################################
-# Aggregate functions into easy to use functions for use in acquisition function
-###############################################################################
 
 def RetrievePhoto(device,output_dir,output_format,package):
     pathname = WaitForNewFile(device,output_dir,output_format,package)

@@ -86,5 +86,3 @@ def get_lib_values():
             outfile.write(writeParams)
         
     return libParams
-
-get_lib_values()
