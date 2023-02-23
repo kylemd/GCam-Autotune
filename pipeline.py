@@ -17,15 +17,15 @@ def initialise_device():
     else:
         return 0
 
-def generate(tunable,newvalue):      #Passing vars here?
-    ctrl.StartCamera(device,package,activity)                               #Change to Frida
-    #Generate Frida value with value                                        
-    patch.PatchRAM()                                                        #This is OK I think but 
-    ctrl.TakePhoto(device)
-    #This is where that code I generated the other day goes. If return 0 etc
+# def generate(tunable,newvalue):      #Passing vars here?
+#     ctrl.StartCamera(device,package,activity)                               #Change to Frida
+#     #Generate Frida value with value                                        
+#     patch.PatchRAM()                                                        #This is OK I think but 
+#     ctrl.TakePhoto(device)
+#     #This is where that code I generated the other day goes. If return 0 etc
 
-def test(x):
-    print('hello')
+def test(t,x):
+    return x / 11
     
 
 
