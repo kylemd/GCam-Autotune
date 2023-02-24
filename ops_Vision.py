@@ -20,6 +20,6 @@ def IQTest(image):
 	return brisque_index.item()
 
 
-test_image = "C:\\Users\\kyle\\Development\\AutoTune_New\\GCam-Autotune\\Assets\\Tests\\CVM_20230217_101211706.jpg"
-score = IQTest(test_image)
-print(score)
+# test_image = "C:\\Users\\kyle\\Development\\AutoTune_New\\GCam-Autotune\\Assets\\Tests\\CVM_20230217_101211706.jpg"
+# score = IQTest(test_image)
+# print(score)

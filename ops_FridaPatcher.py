@@ -52,24 +52,23 @@ def load_hook(packageName):
  
 	return patchScript
 
-def PatchRAM(patchScript,libParams):
-    #Loop through and patch for each tunable item in the API
-	for tunable in libParams:
-		hexAddress = tunable['address']
-		hexOriginal = tunable['hex_original']
-		newValue = tunable['range'][1]
-		hexSize = tunable['length_in_lib']
-		hexName = tunable['name']
+def PatchRAM(patchScript,tunable,newvalue):
+    # #Loop through and patch for each tunable item in the API
+	# for tunable in libParams:
+	hexAddress = tunable['address']
+	hexOriginal = tunable['hex_original']
+	hexSize = tunable['length_in_lib']
+	hexName = tunable['name']
 
-		hexNew = hex2arm.generate_hex(hexOriginal, newValue)
-		if hexNew == None:
-			hexNew = hex(int(newValue))
-		else:
-			hexNew = swap_endianness(hexNew)
+	hexNew = hex2arm.generate_hex(hexOriginal, newvalue)
+	if hexNew == None:
+		hexNew = hex(int(newvalue))
+	else:
+		hexNew = swap_endianness(hexNew.upper())
 
-		print('Patching ' + hexName + ', address ' + hexAddress)
-		#Execute the hook
-		patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
+	print('Patching {} {} with {} {}'.format(hexName,hexAddress,hexNew,newvalue))
+	#Execute the hook
+	patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
   
 def generate_and_write(patchScript, libParam, newValue):
 	for tunable in libParam:

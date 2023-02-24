@@ -1,6 +1,10 @@
 import os
 import time
 import adbutils
+import threading
+
+# set the maximum amount of time to wait for new_file
+MAX_WAIT_TIME = 15
 
 def ConnectDevice():
     # #Wait for user to connect
@@ -13,6 +17,7 @@ def ConnectDevice():
         connected_devices = adb.list()
     except:
         print('Something went wrong with adb. Check you installed dependencies and have ADB installed.')
+        exit()
 
     try:
         if len(connected_devices) > 1:
@@ -97,8 +102,7 @@ def PullImage(device,pathname,destfile):
     #Pull new dng and name in appropriately
     device.sync.pull(pathname,destfile)
 
-def RetrievePhoto(device,output_dir,output_format,package):
-    pathname = WaitForNewFile(device,output_dir,output_format,package)
+def RetrievePhoto(device,pathname,output_dir,output_format):
 
     filename = os.path.basename(pathname)
     pathname = output_dir + '/' + filename
@@ -106,3 +110,48 @@ def RetrievePhoto(device,output_dir,output_format,package):
 
     PullImage(device,pathname,destfile)
     return destfile
+
+def IsAppRunning(device, package, result, should_exit):
+    result[0] = CheckAppRunning(device, package)
+    if not result[0]:
+        should_exit[0] = True
+
+def PollNewFile(device, directory, format, result, should_exit):
+    start_time = time.time()
+    while True:
+        if should_exit[0]:
+            return
+        new_file = GetPhotoPath(device, directory, format)
+        if new_file:
+            result[0] = new_file
+            return
+        if time.time() - start_time > MAX_WAIT_TIME:
+            result[0] = None
+            return
+        time.sleep(1)
+
+def ProcessMonitor(device, package, directory, format):
+    # use a list to hold the results from the threads
+    results = [None, None]
+
+    # use a list to hold a shared variable to signal the threads to exit
+    should_exit = [False]
+
+    # create and start the threads
+    app_running_thread = threading.Thread(target=IsAppRunning, args=(device, package, results, should_exit))
+    app_running_thread.start()
+    new_file_thread = threading.Thread(target=PollNewFile, args=(device, directory, format, results, should_exit))
+    new_file_thread.start()
+
+    # wait for the threads to finish
+    app_running_thread.join()
+    new_file_thread.join()
+
+    # check the results
+    if not results[0]:
+        raise Exception("Process not running")
+    if not results[1]:
+        raise Exception("Timed out waiting for new file")
+    pathname = results[1]
+    local_file = RetrievePhoto(device,package,pathname,directory,format)
+    return local_file

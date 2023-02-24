@@ -10,3 +10,4 @@ Assets/Reference/Original/orig_focuschart.tif
 -p
 __pycache__
 .git_cache/frida
+output/*

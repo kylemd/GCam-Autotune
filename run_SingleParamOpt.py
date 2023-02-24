@@ -1,7 +1,13 @@
-import json
 import ops_libValuesAPI as libapi
+import ops_ADB as ctrl
 import pipeline
 from ax import optimize
+
+package = 'com.androidcamera.ucvm'
+activity = "com.android.camera.CameraLauncher"
+output_dir = '/sdcard/DCIM/Camera'
+output_format = 'jpg'
+device = pipeline.initialise_device(package,activity)
 
 # Define the search space and black box function for one parameter
 def OptimizeSingleParam(hex_tunable):
@@ -14,25 +20,52 @@ def OptimizeSingleParam(hex_tunable):
     }]
 
     def RunPatchTests(params):
-        x = params[hex_tunable]
-        t = d
-        score = pipeline.test(t,x)  # Call your actual black box function with the current parameter value
-        return {'score': score}
+        newvalue = params[hex_tunable]
+        tunable = d
+        try:
+            iqa_score = pipeline.generate(device,package,output_dir,output_format,tunable,newvalue)
+        except Exception:
+            print('Something went wrong.')
+            return 999999999999
+        return {'iqa_score': iqa_score }
 
     # Run the optimization
-    best_parameters, best_score = optimize(
-        parameters=search_space,
+    best_parameters, best_score, _foo, _bar  = optimize(
+        experiment_name="test",
+        objective_name="iqa_score",
         evaluation_function=RunPatchTests,
+        parameters=search_space,
         minimize=True,
-        total_trials=5,
-        objective_name='score'
+        total_trials=20,
     )
 
     # Return the best parameter value and corresponding score
-    return best_parameters[hex_tunable], best_score['score']
+    return best_parameters[hex_tunable], best_score[0]['iqa_score']
 
-# Load the JSON dict
-data = libapi.get_lib_values()
+# Load the JSON dict - normally array of dict
+#data = libapi.get_lib_values() 
+
+if device == 0:
+    print("Cam not detected before running. Make sure it is running and stable and try again.")
+    exit()
+
+data = [{
+    "id": 133,
+    "name": "Sabre noise artifacts",
+    "lib_version": "8.4.400_rc19",
+    "arm_type": "ARMRPL",
+    "disasm": "ldr s2, [x19, #8]",
+    "added_on": "2022-07-01T09:39:06.103645",
+    "description": "covariance_parameters DENOISE_GRADIENT_THRESHOLD",
+    "address": "02813648",
+    "length_in_lib": 4,
+    "hex_original": "620A40BD",
+    "added_by": 1,
+    "range": [
+      -31,
+      31
+    ]
+  }] # First value in array - for testing
 
 for d in data:
     hex_tunable = d['address']
