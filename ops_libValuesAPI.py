@@ -38,7 +38,7 @@ def get_lib_values():
     badParamsPath = 'libBadParams.json'
 
     # Big thanks to Sergei Rivov for his exceptional API!
-    reqUrl = 'http://152.67.78.6:8080/v2/addresses/by_version/?lib_version=8.4.400_rc19&allow_in_testing=false'
+    reqUrl = 'http://152.67.78.6:8080/v2/addresses/by_version/?lib_version=8.4.400_rc19&allow_in_testing=true'
 
     # Check if file exists first so we don't smash Rivovs' API
     if os.path.isfile(paramsPath):
@@ -86,3 +86,7 @@ def get_lib_values():
             outfile.write(writeParams)
         
     return libParams
+
+# If you want to generate the files themselves just delete the JSONs then uncomment and run
+
+get_lib_values()

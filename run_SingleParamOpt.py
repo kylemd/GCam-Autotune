@@ -2,12 +2,16 @@ import ops_libValuesAPI as libapi
 import ops_ADB as ctrl
 import pipeline
 from ax import optimize
+# from ax.plot.contour import plot_contour
+# from ax.utils.notebook.plotting import render, init_notebook_plotting
 
 package = 'com.androidcamera.ucvm'
 activity = "com.android.camera.CameraLauncher"
 output_dir = '/sdcard/DCIM/Camera'
 output_format = 'jpg'
-device = pipeline.initialise_device(package,activity)
+results_array = []
+device, patchscript = pipeline.initialise_device(package,activity)
+# init_notebook_plotting()
 
 # Define the search space and black box function for one parameter
 def OptimizeSingleParam(hex_tunable):
@@ -23,11 +27,12 @@ def OptimizeSingleParam(hex_tunable):
         newvalue = params[hex_tunable]
         tunable = d
         try:
-            iqa_score = pipeline.generate(device,package,output_dir,output_format,tunable,newvalue)
+            localfile, hexnew, iqa_score = pipeline.generate(device,patchscript,package,output_dir,output_format,tunable,newvalue)
+            results_array.append([d['name'],d['address'],newvalue,hexnew, iqa_score, localfile])
+            return {'iqa_score': iqa_score }
         except Exception:
-            print('Something went wrong.')
-            return 999999999999
-        return {'iqa_score': iqa_score }
+            return Exception
+        
 
     # Run the optimization
     best_parameters, best_score, _foo, _bar  = optimize(
@@ -36,9 +41,10 @@ def OptimizeSingleParam(hex_tunable):
         evaluation_function=RunPatchTests,
         parameters=search_space,
         minimize=True,
-        total_trials=20,
+        total_trials=100,
     )
 
+    # render(plot_contour(model=test, param_x='x1', param_y='x2', metric_name='hartmann6'))
     # Return the best parameter value and corresponding score
     return best_parameters[hex_tunable], best_score[0]['iqa_score']
 
@@ -50,20 +56,21 @@ if device == 0:
     exit()
 
 data = [{
-    "id": 133,
-    "name": "Sabre noise artifacts",
+    "id": 106,
+    "name": "Sharp gain",
     "lib_version": "8.4.400_rc19",
-    "arm_type": "ARMRPL",
-    "disasm": "ldr s2, [x19, #8]",
-    "added_on": "2022-07-01T09:39:06.103645",
-    "description": "covariance_parameters DENOISE_GRADIENT_THRESHOLD",
-    "address": "02813648",
+    "arm_type": "ARMFLT",
+    "disasm": "movz w8, #0xbf80, lsl #16",
+    "added_on": "2022-07-01T09:39:05.875276",
+    "description": "",
+    "address": "01FBC294",
     "length_in_lib": 4,
-    "hex_original": "620A40BD",
+    "hex_original": "08F0B752",
+    "extracted_value": "-1",
     "added_by": 1,
     "range": [
-      -31,
-      31
+      0,
+      65535
     ]
   }] # First value in array - for testing
 
@@ -71,3 +78,5 @@ for d in data:
     hex_tunable = d['address']
     best_parameter, best_score = OptimizeSingleParam(hex_tunable)
     print(f"Best value for {hex_tunable}: {best_parameter}, Score: {best_score}")
+    for i in results_array:
+        print(i)

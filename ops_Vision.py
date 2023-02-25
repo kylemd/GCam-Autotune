@@ -1,6 +1,7 @@
 import cv2
 import torch
 import piq
+import numpy as np
  
 def IQTest(image):
 
@@ -13,12 +14,11 @@ def IQTest(image):
 	contour = max(contours, key = len)
 		
 	x, y, w, h = cv2.boundingRect(contour)
-		
+	
 	cropped=torch.tensor(test_image[y:y+h,x:x+w]).permute(2,0,1)[None,...]/255.
 	brisque_index:torch.Tensor=piq.brisque(cropped,data_range=1.,reduction='none')
 
 	return brisque_index.item()
-
 
 # test_image = "C:\\Users\\kyle\\Development\\AutoTune_New\\GCam-Autotune\\Assets\\Tests\\CVM_20230217_101211706.jpg"
 # score = IQTest(test_image)

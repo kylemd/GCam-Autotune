@@ -17,15 +17,26 @@ def swap_endianness(hexstring):
 # Function to start the remote Frida instance
 def load_hook(packageName):
 
-	# Frida - Connect to device and spawn package
+	# Connect to device and spawn package
 	device = frida.get_usb_device()
-	pid = device.spawn([packageName])
-	device.resume(pid)
 
-	#Without waiting Java.perform silently fails
-	time.sleep(1)
-														
+	pid = None
+	for a in device.enumerate_applications():
+		if a.identifier == packageName:
+			pid = a.pid
+			break
+
 	session = device.attach(pid)
+
+	# Connect to device and spawn package (cleanly)
+	# device = frida.get_usb_device()
+	# pid = device.spawn([packageName])
+	# device.resume(pid)
+
+	# #Without waiting Java.perform silently fails
+	# time.sleep(1)
+														
+	# session = device.attach(pid)
 
 	# Create a new JS rampatcher script from string.
 	patchScript = session.create_script("""
@@ -66,21 +77,23 @@ def PatchRAM(patchScript,tunable,newvalue):
 	else:
 		hexNew = swap_endianness(hexNew.upper())
 
-	print('Patching {} {} with {} {}'.format(hexName,hexAddress,hexNew,newvalue))
+	#print('Patching {} {} with {} {}'.format(hexName,hexAddress,hexNew,newvalue))
 	#Execute the hook
 	patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
+
+	return hexNew
   
-def generate_and_write(patchScript, libParam, newValue):
-	for tunable in libParam:
-		hexAddress = tunable['address']
-		hexOriginal = tunable['hex_original']
-		hexSize = tunable['length_in_lib']
-		hexName = tunable['name']
+# def generate_and_write(patchScript, libParam, newValue):
+# 	for tunable in libParam:
+# 		hexAddress = tunable['address']
+# 		hexOriginal = tunable['hex_original']
+# 		hexSize = tunable['length_in_lib']
+# 		hexName = tunable['name']
 
-		print('Patching ' + hexName + ', address ' + hexAddress)
-		hexNew = hex2arm.hex_to_hex(hexOriginal, newValue)
+# 		print('Patching ' + hexName + ', address ' + hexAddress)
+# 		hexNew = hex2arm.hex_to_hex(hexOriginal, newValue)
 
-		patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
+# 		patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
   
 		
     # single tunable item

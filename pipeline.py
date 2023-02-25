@@ -10,26 +10,27 @@ import ops_Vision as iqa
 
 def initialise_device(package,activity):
     device = ctrl.ConnectDevice()
-    ctrl.StartCamera(device,package,activity)                               #Need to change this to Frida boot instance
+    ctrl.StartCamera(device,package,activity)
+    time.sleep(1)
+    patchscript = patch.load_hook(package)
     cam_running = ctrl.CheckAppRunning(device,package)
-    time.sleep(5)
 
     if cam_running == True:
-        return device
+        return device, patchscript
     else:
-        return 0
+        return 0, 0
 
-def generate(device,package,directory,format,tunable,newvalue):      #Passing vars here?
+def generate(device,patchscript,package,directory,format,tunable,newvalue):      #Passing vars here?
     try:
-        patchscript = patch.load_hook(package)
-        time.sleep(5)
-        patch.PatchRAM(patchscript,tunable,newvalue)
+        hexnew = patch.PatchRAM(patchscript,tunable,newvalue)
+        # device.click(((2340/2)-200), (1080/2))
+        time.sleep(1)
         ctrl.TakePhoto(device)
-        time.sleep(5)
-        # file = ctrl.ProcessMonitor(device,package,directory,format)
         file = ctrl.WaitForNewFile(device, directory, format, package)
         localfile = ctrl.RetrievePhoto(device,file,directory,format)
+        
         score = iqa.IQTest(localfile)
-        return score
-    except:
-        return 999999999999
+        return localfile, hexnew, score
+
+    except Exception:
+        return Exception, Exception, Exception
