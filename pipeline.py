@@ -20,17 +20,17 @@ def initialise_device(package,activity):
     else:
         return 0, 0
 
-def generate(device,patchscript,package,directory,format,tunable,newvalue):      #Passing vars here?
+def generate(device,patchscript,package,directory,format,tunable,newvalue,metric):      #Passing vars here?
     try:
         time.sleep(1)
         hexnew = patch.PatchRAM(patchscript,tunable,newvalue)
-        # device.click(((2340/2)-200), (1080/2))
+        #device.click(((2340/2)-150), (1080/2))
         time.sleep(1)
         ctrl.TakePhoto(device)
         file = ctrl.WaitForNewFile(device, directory, format, package)
         localfile = ctrl.RetrievePhoto(device,file,directory,format)
         
-        score = iqa.IQTest(localfile)
+        score = iqa.IQTest(localfile,metric)
         return localfile, hexnew, score
 
     except Exception:

@@ -2,6 +2,7 @@ import ops_libValuesAPI as libapi
 import ops_ADB as ctrl
 import pipeline
 import shutil
+import ops_Vision as cv
 
 from ax import optimize
 # from ax.plot.contour import plot_contour
@@ -13,6 +14,8 @@ output_dir = '/sdcard/DCIM/Camera'
 output_format = 'jpg'
 results_array = []
 device, patchscript = pipeline.initialise_device(package,activity)
+iqa_metric,metric_direction = cv.initialise_iqa('pi')
+
 # init_notebook_plotting()
 
 # Define the search space and black box function for one parameter
@@ -29,7 +32,7 @@ def OptimizeSingleParam(hex_tunable):
         newvalue = params[hex_tunable]
         tunable = d
         try:
-            localfile, hexnew, iqa_score = pipeline.generate(device,patchscript,package,output_dir,output_format,tunable,newvalue)
+            localfile, hexnew, iqa_score = pipeline.generate(device,patchscript,package,output_dir,output_format,tunable,newvalue,iqa_metric)
 
             #Move file so results are easier to view
             shutil.move(str(localfile),'.\\output\\{}_{}_{}.{}'.format(d['address'],iqa_score,newvalue,output_format))
@@ -45,8 +48,8 @@ def OptimizeSingleParam(hex_tunable):
         objective_name="iqa_score",
         evaluation_function=RunPatchTests,
         parameters=search_space,
-        minimize=True,
-        total_trials=50,
+        minimize=bool(metric_direction),
+        total_trials=120,
     )
 
     # render(plot_contour(model=test, param_x='x1', param_y='x2', metric_name='hartmann6'))
@@ -61,17 +64,17 @@ if device == 0:
     exit()
 
 data = [{
-    "id": 178,
-    "name": "Smoothness",
+    "id": 116,
+    "name": "Chroma Denoise A",
     "lib_version": "8.4.400_rc19",
     "arm_type": "ARM",
-    "disasm": "fmov s0, #2.00000000",
-    "added_on": "2022-07-01T09:39:06.408718",
+    "disasm": "fmov v0.2d, #1.00000000",
+    "added_on": "2022-07-01T09:39:05.973244",
     "description": "",
-    "address": "01255FD4",
+    "address": "01FBC950",
     "length_in_lib": 4,
-    "hex_original": "0010201E",
-    "extracted_value": "2",
+    "hex_original": "00F6036F",
+    "extracted_value": "1",
     "added_by": 1,
     "range": [
       -31,
@@ -81,7 +84,8 @@ data = [{
 
 for d in data:
     hex_tunable = d['address']
+    hex_name = d['name']
     best_parameter, best_score = OptimizeSingleParam(hex_tunable)
-    print(f"Best value for {hex_tunable}: {best_parameter}, Score: {best_score}")
     for i in results_array:
         print(i)
+    print(f"Best value for {hex_tunable} {hex_name}: {best_parameter}, Score: {best_score}")
