@@ -1,11 +1,13 @@
 import ops_libValuesAPI as libapi
 import ops_ADB as ctrl
 import pipeline
+import shutil
+
 from ax import optimize
 # from ax.plot.contour import plot_contour
 # from ax.utils.notebook.plotting import render, init_notebook_plotting
 
-package = 'com.androidcamera.ucvm'
+package = 'com.shamim.cam'
 activity = "com.android.camera.CameraLauncher"
 output_dir = '/sdcard/DCIM/Camera'
 output_format = 'jpg'
@@ -28,6 +30,9 @@ def OptimizeSingleParam(hex_tunable):
         tunable = d
         try:
             localfile, hexnew, iqa_score = pipeline.generate(device,patchscript,package,output_dir,output_format,tunable,newvalue)
+
+            #Move file so results are easier to view
+            shutil.move(str(localfile),'.\\output\\{}_{}_{}.{}'.format(d['address'],iqa_score,newvalue,output_format))
             results_array.append([d['name'],d['address'],newvalue,hexnew, iqa_score, localfile])
             return {'iqa_score': iqa_score }
         except Exception:
@@ -41,7 +46,7 @@ def OptimizeSingleParam(hex_tunable):
         evaluation_function=RunPatchTests,
         parameters=search_space,
         minimize=True,
-        total_trials=100,
+        total_trials=50,
     )
 
     # render(plot_contour(model=test, param_x='x1', param_y='x2', metric_name='hartmann6'))
@@ -56,21 +61,21 @@ if device == 0:
     exit()
 
 data = [{
-    "id": 106,
-    "name": "Sharp gain",
+    "id": 178,
+    "name": "Smoothness",
     "lib_version": "8.4.400_rc19",
-    "arm_type": "ARMFLT",
-    "disasm": "movz w8, #0xbf80, lsl #16",
-    "added_on": "2022-07-01T09:39:05.875276",
+    "arm_type": "ARM",
+    "disasm": "fmov s0, #2.00000000",
+    "added_on": "2022-07-01T09:39:06.408718",
     "description": "",
-    "address": "01FBC294",
+    "address": "01255FD4",
     "length_in_lib": 4,
-    "hex_original": "08F0B752",
-    "extracted_value": "-1",
+    "hex_original": "0010201E",
+    "extracted_value": "2",
     "added_by": 1,
     "range": [
-      0,
-      65535
+      -31,
+      31
     ]
   }] # First value in array - for testing
 

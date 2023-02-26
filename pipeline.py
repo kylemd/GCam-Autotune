@@ -22,6 +22,7 @@ def initialise_device(package,activity):
 
 def generate(device,patchscript,package,directory,format,tunable,newvalue):      #Passing vars here?
     try:
+        time.sleep(1)
         hexnew = patch.PatchRAM(patchscript,tunable,newvalue)
         # device.click(((2340/2)-200), (1080/2))
         time.sleep(1)

@@ -41,7 +41,7 @@ def load_hook(packageName):
 	# Create a new JS rampatcher script from string.
 	patchScript = session.create_script("""
 			function writemem(libOffset,newHex,sizeHex) {
-				const libRamAddress = Process.findModuleByName("libgcastartup.so");
+				const libRamAddress = Process.findModuleByName("libpatched_jni.so");
 				const ramOffset = new NativePointer(libRamAddress.base.add("0x" + libOffset));
 				const patchedHex = Number('0x' + newHex);
 				const sizeInBytes = Number(sizeHex);
