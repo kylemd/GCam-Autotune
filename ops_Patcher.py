@@ -1,5 +1,4 @@
 import frida
-import time
 from ProjectPepega import arm as hex2arm
 
 #Define a message handler so Python can communicate with the remote Frida instance.
@@ -9,8 +8,8 @@ def msg_handler(message, payload):
 
 # Javascript defaults to Big Endian so the bits in the libpatcher value appear backwards. 
 # It's much easier to fix it here than in JavapatchScript.
-def swap_endianness(hexstring):
-	ba = bytearray.fromhex(hexstring)
+def swap_endianness(hexValue):
+	ba = bytearray.fromhex(hexValue)
 	ba.reverse()
 	return ba.hex()
 
@@ -63,40 +62,42 @@ def load_hook(packageName):
  
 	return patchScript
 
-def PatchRAM(patchScript,tunable,newvalue):
+# Patch lib in RAM with Frida
+def patch_ram(patchScript,tuneDict,newValue):
     # #Loop through and patch for each tunable item in the API
 	# for tunable in libParams:
-	hexAddress = tunable['address']
-	hexOriginal = tunable['hex_original']
-	hexSize = tunable['length_in_lib']
-	hexName = tunable['name']
+	hexAddress = tuneDict['address']
+	hexOriginal = tuneDict['hex_original']
+	hexSize = tuneDict['length_in_lib']
+	hexName = tuneDict['name']
 
-	hexNew = hex2arm.generate_hex(hexOriginal, newvalue)
-	if hexNew == None:
-		hexNew = hex(int(newvalue))
+	hexValue = hex2arm.generate_hex(hexOriginal, newValue)
+	if hexValue == None:
+		hexValue = hex(int(newValue))
 	else:
-		hexNew = swap_endianness(hexNew.upper())
+		hexValue = swap_endianness(hexValue.upper())
 
 	#print('Patching {} {} with {} {}'.format(hexName,hexAddress,hexNew,newvalue))
 	#Execute the hook
-	patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
+	patchScript.exports.libpatcher(hexAddress, hexValue, hexSize)
 
-	return hexNew
-  
-# def generate_and_write(patchScript, libParam, newValue):
-# 	for tunable in libParam:
-# 		hexAddress = tunable['address']
-# 		hexOriginal = tunable['hex_original']
-# 		hexSize = tunable['length_in_lib']
-# 		hexName = tunable['name']
+	return hexValue
 
-# 		print('Patching ' + hexName + ', address ' + hexAddress)
-# 		hexNew = hex2arm.hex_to_hex(hexOriginal, newValue)
+# Patch lib file on device using remote Python instance
+def patch_file(device,libPath,tuneDict,newValue):
+    # #Loop through and patch for each tunable item in the API
+	# for tunable in libParams:
+	hexAddress = tuneDict['address']
+	hexOriginal = tuneDict['hex_original']
+	hexSize = tuneDict['length_in_lib']
+	hexName = tuneDict['name']
 
-# 		patchScript.exports.libpatcher(hexAddress, hexNew, hexSize)
-  
-		
-    # single tunable item
-    # if newValue is hex
-    # for n in range(0xffff):
-	
+	hexValue = hex2arm.generate_hex(hexOriginal, newValue)
+	if hexValue == None:
+		hexValue = hex(int(newValue))
+	else:
+		hexValue = swap_endianness(hexValue.upper())
+
+	device.shell(["python","/sdcard/autotune_patcher.py",libPath,hexAddress,hexValue])
+
+	return hexValue
