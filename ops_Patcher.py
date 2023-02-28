@@ -1,4 +1,5 @@
 import frida
+import binascii
 from ProjectPepega import arm as hex2arm
 
 #Define a message handler so Python can communicate with the remote Frida instance.
@@ -87,17 +88,17 @@ def patch_ram(patchScript,tuneDict,newValue):
 def patch_file(device,libPath,tuneDict,newValue):
     # #Loop through and patch for each tunable item in the API
 	# for tunable in libParams:
-	hexAddress = tuneDict['address']
 	hexOriginal = tuneDict['hex_original']
-	hexSize = tuneDict['length_in_lib']
-	hexName = tuneDict['name']
+	hexSize = int(tuneDict['length_in_lib'])
 
 	hexValue = hex2arm.generate_hex(hexOriginal, newValue)
 	if hexValue == None:
 		hexValue = hex(int(newValue))
-	else:
-		hexValue = swap_endianness(hexValue.upper())
 
-	device.shell(["python","/sdcard/autotune_patcher.py",libPath,hexAddress,hexValue])
+	decAddress = int(tuneDict['address'])
+	shellValue = binascii.unhexlify(hexValue)
+	patchCmd = "printf '{}' | dd of={} bs=1 seek={} count={} conv=notrunc".format(
+		shellValue,libPath,decAddress,hexSize)
+	device.shell(patchCmd)
 
 	return hexValue

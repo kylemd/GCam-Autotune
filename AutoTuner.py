@@ -38,7 +38,7 @@ def main():
         print("Cam not detected before running. Make sure it is running and stable and try again.")
         exit()
 
-    if len(testParam) is not 0:
+    if len(testParam) != 0:
         libDict = testParam
     else:
         libDict = lib_api.get_lib_values() 
