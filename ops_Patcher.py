@@ -98,14 +98,8 @@ def patch_file(device, libpath, tunedict, newvalue):
         hex_value = hex(int(newvalue))
 
     dec_address = int(tunedict['address'], 16)
-    if len(hex_value) % 2 != 0:
-        hex_value = '0' + hex_value
 
     shell_value = binascii.unhexlify(hex_value)
-
-    if len(shell_value) < len(hex_value) // 2:
-        padding_length = len(hex_value) // 2 - len(shell_value)
-        shell_value = b'\x00' * padding_length + shell_value
 
     patch_cmd = "printf '{}' | dd of={} bs=1 seek={} count={} conv=notrunc".format(
         shell_value, libpath, dec_address, hex_size)

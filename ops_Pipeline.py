@@ -38,7 +38,7 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
 
         # File method
         hex_value = Patch.patch_file(device, args_dict['appLibPath'],
-                                    tune_dict, new_value)
+                                     tune_dict, new_value)
 
         initialise_camera(device, args_dict)
 
