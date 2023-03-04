@@ -6,12 +6,13 @@ import threading
 # set the maximum amount of time to wait for new_file
 MAX_WAIT_TIME = 15
 
-def ConnectDevice():
+
+def connect_device():
     # #Wait for user to connect
     # print('Ensure your device is plugged in via USB. Then press enter.')
     # input()
 
-    #Run ADB server and connect to device
+    # Run ADB server and connect to device
     try:
         adb = adbutils.AdbClient(host="127.0.0.1", port=5037)
         connected_devices = adb.list()
@@ -25,7 +26,7 @@ def ConnectDevice():
             for device in connected_devices:
                 print('[' + str(i) + ']\t' + str(device.serial))
                 i = i + 1
-            
+
             while True:
                 try:
                     device_selection = int(input("Select which device you'd like to connect to."))
@@ -45,7 +46,8 @@ def ConnectDevice():
     print('Successfully connected to ' + str(device.serial))
     return device
 
-def GetCameraPackageName(device):
+
+def get_camera_package_name(device):
     package_list = device.list_packages()
 
     for pkgindex, pkgname in enumerate(package_list):
@@ -61,35 +63,40 @@ def GetCameraPackageName(device):
     package_name = package_list[pkg_selection]
     return package_name
 
-def StartCamera(device,package,activity):
-    device.shell("am start -n {}/{}".format(package,activity))
 
-def TakePhoto(device):
+def start_camera(device, package, activity):
+    device.shell("am start -n {}/{}".format(package, activity))
+
+
+def take_photo(device):
     device.keyevent("KEYCODE_CAMERA")
 
-def CheckAppRunning(device,package):
+
+def check_app_running(device, package):
     status = device.shell("pidof {}".format(package))
-    
+
     if not status:
         return False
     else:
         return True
 
-def GetPhotoPath(device,directory,format):
-    new_file = device.shell("find {} -name '*.{}' -a -not -name '*pending*' -mtime -15s -mtime +2s".format(directory,format))
+
+def get_photo_path(device, directory, pic_format):
+    new_file = device.shell(
+        "find {} -name '*.{}' -a -not -name '*pending*' -mtime -15s -mtime +2s".format(directory, pic_format))
     return new_file
 
-def WaitForNewFile(device, output_dir, output_format, package):
-    
+
+def wait_for_new_file(device, output_dir, output_format, package):
     timeout = time.time() + 60  # 30 second timeout
-    process_running = CheckAppRunning(device,package)
-    
+    process_running = check_app_running(device, package)
+
     while process_running is True:
         if time.time() > timeout:
             return 0  # Timeout reached without finding new file
-        
-        process_running = CheckAppRunning(device,package) #Check variable again...not very elegant
-        pathname = GetPhotoPath(device,output_dir,output_format) #Check variable again...not very elegant
+
+        process_running = check_app_running(device, package)  # Check variable again...not very elegant
+        pathname = get_photo_path(device, output_dir, output_format)  # Check variable again...not very elegant
 
         if output_format in pathname:
             return pathname  # New file found
@@ -98,16 +105,17 @@ def WaitForNewFile(device, output_dir, output_format, package):
 
     return 0  # process_running returned false, i.e. crashed
 
-def PullImage(device,pathname,destfile):
-    #Pull new dng and name in appropriately
-    device.sync.pull(pathname,destfile)
 
-def RetrievePhoto(device,pathname,output_dir,output_format):
+def pull_image(device, pathname, destfile):
+    # Pull new dng and name in appropriately
+    device.sync.pull(pathname, destfile)
 
+
+def retrieve_photo(device, pathname, output_dir, output_format):
     filename = os.path.basename(pathname)
     pathname = output_dir + '/' + filename
     destfile = '.\\output\\' + str(filename)
 
-    PullImage(device,pathname,destfile)
-    device.shell(['rm',pathname])
+    pull_image(device, pathname, destfile)
+    device.shell(['rm', pathname])
     return destfile

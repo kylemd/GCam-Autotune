@@ -2,44 +2,47 @@ import frida
 import binascii
 from ProjectPepega import arm as hex2arm
 
-#Define a message handler so Python can communicate with the remote Frida instance.
+
+# Define a message handler so Python can communicate with the remote Frida instance.
 def msg_handler(message, payload):
     print(message)
     print(payload)
 
-# Javascript defaults to Big Endian so the bits in the libpatcher value appear backwards. 
+
+# Javascript defaults to Big Endian so the bits in the libpatcher value appear backwards.
 # It's much easier to fix it here than in JavapatchScript.
-def swap_endianness(hexValue):
-	ba = bytearray.fromhex(hexValue)
-	ba.reverse()
-	return ba.hex()
+def swap_endianness(hex_value):
+    ba = bytearray.fromhex(hex_value)
+    ba.reverse()
+    return ba.hex()
+
 
 # Function to start the remote Frida instance
-def load_hook(packageName):
+def load_hook(package_name):
+    # Connect to device and spawn package
+    device = frida.get_usb_device()
 
-	# Connect to device and spawn package
-	device = frida.get_usb_device()
+    pid = None
+    for a in device.enumerate_applications():
+        if a.identifier == package_name:
+            pid = a.pid
+            break
 
-	pid = None
-	for a in device.enumerate_applications():
-		if a.identifier == packageName:
-			pid = a.pid
-			break
+    session = device.attach(pid)
 
-	session = device.attach(pid)
+    # Method to cleanly connect and spawn app
+    # Connect to device and spawn package (cleanly)
+    # device = frida.get_usb_device()
+    # pid = device.spawn([package_name])
+    # device.resume(pid)
 
-	# Connect to device and spawn package (cleanly)
-	# device = frida.get_usb_device()
-	# pid = device.spawn([packageName])
-	# device.resume(pid)
+    # #Without waiting Java.perform silently fails
+    # time.sleep(1)
 
-	# #Without waiting Java.perform silently fails
-	# time.sleep(1)
-														
-	# session = device.attach(pid)
+    # session = device.attach(pid)
 
-	# Create a new JS rampatcher script from string.
-	patchScript = session.create_script("""
+    # Create a new JS rampatcher script from string.
+    patch_script = session.create_script("""
 			function writemem(libOffset,newHex,sizeHex) {
 				const libRamAddress = Process.findModuleByName("libpatched_jni.so");
 				const ramOffset = new NativePointer(libRamAddress.base.add("0x" + libOffset));
@@ -58,47 +61,55 @@ def load_hook(packageName):
 			};
 	""")
 
-	patchScript.on('message',msg_handler) 									#Calls message handler for JS
-	patchScript.load()
- 
-	return patchScript
+    patch_script.on('message', msg_handler)  # Calls message handler for JS
+    patch_script.load()
+
+    return patch_script
+
 
 # Patch lib in RAM with Frida
-def patch_ram(patchScript,tuneDict,newValue):
-    # #Loop through and patch for each tunable item in the API
-	# for tunable in libParams:
-	hexAddress = tuneDict['address']
-	hexOriginal = tuneDict['hex_original']
-	hexSize = tuneDict['length_in_lib']
-	hexName = tuneDict['name']
+def patch_ram(patchscript, tunedict, newvalue):
+    # #Loop through and Patch for each tunable item in the API
+    # for tunable in libParams:
+    hex_address = tunedict['address']
+    hex_original = tunedict['hex_original']
+    hex_size = tunedict['length_in_lib']
 
-	hexValue = hex2arm.generate_hex(hexOriginal, newValue)
-	if hexValue == None:
-		hexValue = hex(int(newValue))
-	else:
-		hexValue = swap_endianness(hexValue.upper())
+    hex_value = hex2arm.generate_hex(hex_original, newvalue)
+    if hex_value is None:
+        hex_value = hex(int(newvalue))
+    else:
+        hex_value = swap_endianness(hex_value.upper())
 
-	#print('Patching {} {} with {} {}'.format(hexName,hexAddress,hexNew,newvalue))
-	#Execute the hook
-	patchScript.exports.libpatcher(hexAddress, hexValue, hexSize)
+    patchscript.exports.libpatcher(hex_address, hex_value, hex_size)
 
-	return hexValue
+    return hex_value
+
 
 # Patch lib file on device using remote Python instance
-def patch_file(device,libPath,tuneDict,newValue):
-    # #Loop through and patch for each tunable item in the API
-	# for tunable in libParams:
-	hexOriginal = tuneDict['hex_original']
-	hexSize = int(tuneDict['length_in_lib'])
+def patch_file(device, libpath, tunedict, newvalue):
+    # Loop through and Patch for each tunable item in the API
+    # for tunable in libParams:
+    hex_original = tunedict['hex_original']
+    hex_size = int(tunedict['length_in_lib'])
 
-	hexValue = hex2arm.generate_hex(hexOriginal, newValue)
-	if hexValue == None:
-		hexValue = hex(int(newValue))
+    hex_value = hex2arm.generate_hex(hex_original, newvalue)
+    if hex_value is None:
+        hex_value = hex(int(newvalue))
 
-	decAddress = int(tuneDict['address'])
-	shellValue = binascii.unhexlify(hexValue)
-	patchCmd = "printf '{}' | dd of={} bs=1 seek={} count={} conv=notrunc".format(
-		shellValue,libPath,decAddress,hexSize)
-	device.shell(patchCmd)
+    dec_address = int(tunedict['address'], 16)
+    if len(hex_value) % 2 != 0:
+        hex_value = '0' + hex_value
 
-	return hexValue
+    shell_value = binascii.unhexlify(hex_value)
+
+    if len(shell_value) < len(hex_value) // 2:
+        padding_length = len(hex_value) // 2 - len(shell_value)
+        shell_value = b'\x00' * padding_length + shell_value
+
+    patch_cmd = "printf '{}' | dd of={} bs=1 seek={} count={} conv=notrunc".format(
+        shell_value, libpath, dec_address, hex_size)
+
+    device.shell(patch_cmd)
+
+    return hex_value
