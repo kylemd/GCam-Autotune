@@ -4,11 +4,10 @@ import ops_Pipeline
 import ops_TestSingleParam as Experiment
 
 # Dict for paths, app package names etc. Passing them as individual params gets messy
-argsDict = {
+args_dict = {
     "appPackage": "com.androidcamera.ucvm",
     "appActivity": "com.android.camera.CameraLauncher",
-    "appLibPath": "/data/app/~~llWJ_SRKQNirWRD_BbRrRQ==/com.androidcamera.ucvm-HMg6ssZerwWgbbugTkUOeQ==/lib/arm64"
-                  "/libgcastartup.so",
+    "appLibPath": "/data/app/~~llWJ_SRKQNirWRD_BbRrRQ==/com.androidcamera.ucvm-HMg6ssZerwWgbbugTkUOeQ==/lib/arm64/libgcastartup.so",
     "remoteOutputDir": "/sdcard/DCIM/Camera",
     "remoteOutputExt": "jpg",
     "iqaMethod": "pi",
@@ -40,13 +39,11 @@ if device == 0:
 else:
     print(str(device))
 
-device.root()
-
 if len(testParam) != 0:
-    libDict = testParam
+    lib_dict = testParam
 else:
-    libDict = LibAPI.get_lib_values()
+    lib_dict = LibAPI.get_lib_values()
 
-iqaMetric, metricDirection = ops_Pipeline.initialise_iqa(argsDict['iqaMethod'])
+iqaMetric, metricDirection = ops_Pipeline.initialise_iqa(args_dict['iqaMethod'])
 
-Experiment.run_optimisation(device, argsDict, libDict)
+Experiment.run_optimisation(device, args_dict, lib_dict)
