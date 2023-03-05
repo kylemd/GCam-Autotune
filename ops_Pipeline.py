@@ -5,7 +5,8 @@ import pyiqa
 import torch
 
 import ops_ADB as Ctrl
-import ops_Patcher as Patch
+
+from ProjectPepega import arm as hex2arm
 
 
 # Start device
@@ -32,13 +33,8 @@ def initialise_iqa(iqa_metric):
 
 def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
     try:
-        # Frida method
-        # time.sleep(1)
-        # hexnew = Patch.patch_ram(patchscript,tunable,newvalue)
-
-        # File method
-        hex_value = Patch.patch_file(device, args_dict['appLibPath'],
-                                     tune_dict, new_value)
+        hex_value = patch_file(device, args_dict['appLibPath'],
+                               tune_dict, new_value)
 
         initialise_camera(device, args_dict)
 
@@ -59,6 +55,25 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
 
     except Exception:
         return Exception, Exception, Exception
+
+
+# Patch lib file on device using in-built Linux GNU tools
+def patch_file(device, libpath, tunedict, newvalue):
+    hex_original = tunedict['hex_original']
+    hex_size = int(tunedict['length_in_lib'])
+
+    hex_value = hex2arm.generate_hex(hex_original, newvalue)
+    if hex_value is None:
+        hex_value = hex(int(newvalue))
+
+    dec_address = int(tunedict['address'], 16)
+
+    patch_cmd = "echo '{}' | xxd -r -p | dd of={} bs=1 seek={} count={} conv=notrunc".format(
+        hex_value, libpath, dec_address, hex_size)
+
+    device.shell(['su', '-c', patch_cmd])
+
+    return hex_value
 
 
 def iq_test(image, iqa_metric):
