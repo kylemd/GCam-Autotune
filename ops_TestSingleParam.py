@@ -25,8 +25,10 @@ def optimize_one_param(device, args_dict, tune_dict, hex_address):
     def run_tests(params):
         new_value = params[hex_address]
         try:
-            local_file, hex_new, iqa_score = ops_Pipeline.img_pipeline(device, args_dict, tune_dict, new_value,
-                                                                       iqa_metric)
+            hex_new, iqa_score = ops_Pipeline.img_pipeline(device, args_dict, tune_dict, new_value,
+                                                           iqa_metric)
+
+            print('Score for {}: {}'.format(hex_new, iqa_score))
 
             return {'iqa_score': iqa_score}
 

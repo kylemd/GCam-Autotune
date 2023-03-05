@@ -69,7 +69,7 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
         return hex_value, iq_score
 
     except Exception:
-        return Exception, Exception, Exception
+        return Exception, Exception
 
 
 # Patch lib file on device using in-built Linux GNU tools
