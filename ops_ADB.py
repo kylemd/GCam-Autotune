@@ -68,6 +68,10 @@ def start_camera(device, package, activity):
     device.shell("am start -n {}/{}".format(package, activity))
 
 
+def stop_camera(device, package):
+    device.shell("am force-stop {}".format(package))
+
+
 def take_photo(device):
     device.keyevent("KEYCODE_CAMERA")
 
