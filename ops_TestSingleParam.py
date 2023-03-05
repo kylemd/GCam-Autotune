@@ -1,6 +1,3 @@
-import shutil
-from pathlib import Path
-
 from ax import optimize
 
 import ops_Pipeline
@@ -31,18 +28,6 @@ def optimize_one_param(device, args_dict, tune_dict, hex_address):
             local_file, hex_new, iqa_score = ops_Pipeline.img_pipeline(device, args_dict, tune_dict, new_value,
                                                                        iqa_metric)
 
-            # Build output directory names
-            output_dir = '{}\\{}'.format(args_dict['output_dir'], tune_dict['address'])
-            ext = args_dict['remoteOutputExt']
-
-            # Create output path if it doesn't exist
-            Path(output_dir).mkdir(parents=True, exist_ok=True)
-
-            # Move file so results are easier to view
-            shutil.move(str(local_file), '{}\\{}_{}.{}'.format(output_dir, iqa_score, new_value, ext))
-
-            resultsArray.append([tune_dict['name'], tune_dict['address'], new_value, hex_new, iqa_score, local_file])
-
             return {'iqa_score': iqa_score}
 
         except Exception:
@@ -64,10 +49,10 @@ def optimize_one_param(device, args_dict, tune_dict, hex_address):
 
 
 def run_optimisation(device, args_dict, lib_dict):
-    for tuneDict in lib_dict:
-        hex_address = tuneDict['address']
-        hex_name = tuneDict['name']
-        best_param, best_score = optimize_one_param(device, args_dict, tuneDict, hex_address)
+    for tune_dict in lib_dict:
+        hex_address = tune_dict['address']
+        hex_name = tune_dict['name']
+        best_param, best_score = optimize_one_param(device, args_dict, tune_dict, hex_address)
         for result in resultsArray:
             print(result)
         print(f"Best value for {hex_address} {hex_name}: {best_param}, Score: {best_score}")

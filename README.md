@@ -46,3 +46,5 @@ More robust exception catching
 Correctly read user variables from JSON
 
 De-duplicate the values in Rivovs' API
+
+Write code to roll-back changes to lib if that tunable isn't working

@@ -3,10 +3,13 @@ import time
 import cv2
 import pyiqa
 import torch
+import shutil
+
 
 import ops_ADB as Ctrl
 
 from ProjectPepega import arm as hex2arm
+from pathlib import Path
 
 
 # Start device
@@ -39,7 +42,7 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
         initialise_camera(device, args_dict)
 
         # Send click to centre of screen to focus and adjust exposure
-        device.click(((2340 / 2) - 150), (1080 / 2))
+        # device.click(((2340 / 2) - 150), (1080 / 2))
         time.sleep(3)
         Ctrl.take_photo(device)
 
@@ -53,7 +56,17 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
 
         iq_score = iq_test(local_file, iqa_metric)
 
-        return local_file, hex_value, iq_score
+        # Build output directory names
+        output_dir = '{}\\{}'.format(args_dict['output_dir'], tune_dict['address'])
+        ext = args_dict['remoteOutputExt']
+
+        # Create output path if it doesn't exist
+        Path(output_dir).mkdir(parents=True, exist_ok=True)
+
+        # Move file so results are easier to view
+        shutil.move(str(local_file), '{}\\{}_{}.{}'.format(output_dir, iq_score, new_value, ext))
+
+        return hex_value, iq_score
 
     except Exception:
         return Exception, Exception, Exception

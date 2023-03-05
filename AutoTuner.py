@@ -7,7 +7,8 @@ import ops_TestSingleParam as Experiment
 args_dict = {
     "appPackage": "com.androidcamera.ucvm",
     "appActivity": "com.android.camera.CameraLauncher",
-    "appLibPath": "/data/app/~~llWJ_SRKQNirWRD_BbRrRQ==/com.androidcamera.ucvm-HMg6ssZerwWgbbugTkUOeQ==/lib/arm64/libgcastartup.so",
+    "appLibPath": "/data/app/~~PCtiWutFb5qvEp1roy5L8A==/com.androidcamera.ucvm-18cmbDEut5OwOxVvwQA4sQ==/lib/arm64"
+                  "/libgcastartup.so",
     "remoteOutputDir": "/sdcard/DCIM/Camera",
     "remoteOutputExt": "jpg",
     "iqaMethod": "pi",
