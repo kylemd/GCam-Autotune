@@ -5,7 +5,6 @@ import pyiqa
 import torch
 import shutil
 
-
 import ops_ADB as Ctrl
 
 from ProjectPepega import arm as hex2arm
@@ -58,12 +57,12 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
 
         # Build output directory names
         output_dir = '{}\\{}'.format(args_dict['output_dir'], tune_dict['address'])
-        ext = args_dict['remoteOutputExt']
 
         # Create output path if it doesn't exist
         Path(output_dir).mkdir(parents=True, exist_ok=True)
 
         # Move file so results are easier to view
+        ext = args_dict['remoteOutputExt']
         shutil.move(str(local_file), '{}\\{}_{}.{}'.format(output_dir, iq_score, new_value, ext))
 
         return hex_value, iq_score
@@ -94,7 +93,7 @@ def patch_file(device, libpath, tunedict, newvalue):
 def iq_test(image, iqa_metric):
     if len(image) > 1:
         # For full reference tests, not yet implemented
-        ref_image = cv2.imread(image[0])
+        # ref_image = cv2.imread(image[0])
         test_image = cv2.imread(image[1])
     else:
         test_image = cv2.imread(image[0])
