@@ -41,29 +41,33 @@ def img_pipeline(device, args_dict, tune_dict, new_value, iqa_metric):
         initialise_camera(device, args_dict)
 
         # Send click to centre of screen to focus and adjust exposure
-        # device.click(((2340 / 2) - 150), (1080 / 2))
+        # device.click(((2340 / 2) - 170), (1080 / 2) - 50)
+
         time.sleep(3)
         Ctrl.take_photo(device)
 
-        directory = args_dict['remoteOutputDir']
-        package = args_dict['appPackage']
+        output_directory = args_dict['remoteOutputDir']
+        app_package = args_dict['appPackage']
+        output_format = args_dict['remoteOutputExt']
 
-        remote_file = Ctrl.wait_for_new_file(device, directory, format, package)
-        local_file = Ctrl.retrieve_photo(device, remote_file, directory, format)
+        remote_file = Ctrl.wait_for_new_file(device, output_directory, output_format, app_package)
+        local_file = Ctrl.retrieve_photo(device, remote_file, output_directory, output_format)
 
-        Ctrl.stop_camera(device, package)
+        Ctrl.stop_camera(device, app_package)
 
         iq_score = iq_test(local_file, iqa_metric)
 
+        print(new_value, iq_score)
+
         # Build output directory names
-        output_dir = '{}\\{}'.format(args_dict['output_dir'], tune_dict['address'])
+        local_output = '{}\\{}'.format(args_dict['outputDir'], tune_dict['address'])
 
         # Create output path if it doesn't exist
-        Path(output_dir).mkdir(parents=True, exist_ok=True)
+        Path(local_output).mkdir(parents=True, exist_ok=True)
 
         # Move file so results are easier to view
         ext = args_dict['remoteOutputExt']
-        shutil.move(str(local_file), '{}\\{}_{}.{}'.format(output_dir, iq_score, new_value, ext))
+        shutil.move(str(local_file), '{}\\{}_{}.{}'.format(local_output, iq_score, new_value, ext))
 
         return hex_value, iq_score
 
@@ -91,25 +95,10 @@ def patch_file(device, libpath, tunedict, newvalue):
 
 
 def iq_test(image, iqa_metric):
-    if len(image) > 1:
-        # For full reference tests, not yet implemented
-        # ref_image = cv2.imread(image[0])
-        test_image = cv2.imread(image[1])
-    else:
-        test_image = cv2.imread(image[0])
+    test_image = cv2.imread(image)
 
-    # Process the image, so we can detect test chart border and crop
-    gray = cv2.cvtColor(test_image, cv2.COLOR_BGR2GRAY)
-    gaussian = cv2.GaussianBlur(gray, (3, 3), cv2.BORDER_DEFAULT)
-    edges = cv2.Canny(gaussian, 100, 200)
-    contours, hierarchy = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    contour = max(contours, key=len)
-    x, y, w, h = cv2.boundingRect(contour)
+    image_tensor = torch.tensor(test_image).permute(2, 0, 1)[None, ...] / 255.
 
-    cropped = test_image[y:y + h, x:x + w]
-    cropped_tensor = torch.tensor(cropped).permute(2, 0, 1)[None, ...] / 255.
-
-    iq_score = iqa_metric(cropped_tensor).item()
-    cv2.imwrite(image, cropped)
+    iq_score = iqa_metric(image_tensor).item()
 
     return iq_score
