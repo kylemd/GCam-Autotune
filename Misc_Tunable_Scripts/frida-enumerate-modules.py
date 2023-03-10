@@ -5,38 +5,52 @@
 
 import sys
 import frida
+import time
+import adbutils
 
-package_name = 'com.shamim.cam'
+package_name = 'com.androidcamera.ucvm'
+messages = []
 
 def on_message(message, data):
-	print("[%s] -> %s" % (message, data))
+	messages.append(message['payload'])
 
 def main(package_name):
 	# Connect to device and spawn package
-	device = frida.get_usb_device()
+	adb = adbutils.AdbClient(host="127.0.0.1", port=5037)
+	d = adb.device()
+	
+	device = frida.get_usb_device(3)
+	pid = device.spawn([package_name])
+	device.resume(pid)
 
-	pid = None
-	for a in device.enumerate_applications():
-		if a.identifier == package_name:
-			pid = a.pid
-			break
+	#Without waiting Java.perform silently fails
+	time.sleep(1)
 
 	session = device.attach(pid)
 
+	time.sleep(3)
+
 	script = session.create_script("""
-		Process.enumerateModules({
-			onMatch: function(module){
-				console.log('Module name: ' + module.name + " - " + "Base Address: " + module.base.toString());
-			}, 
-			onComplete: function(){}
-		});
-""")
+		const lib = Process.findModuleByName("libgcastartup.so");
+		console.log(`!!! Loaded ${lib.name} @ ${lib.base}. Saving exports to file.\n`);
+		lib.enumerateExports().forEach(sym=>{send(`${sym.name},${sym.address}`)})
+	""")
 
 	script.on('message', on_message)
 	script.load()
-	input('[!] Press <Enter> at any time to detach from instrumented program.\n\n')
+
+	with open('lib_exports.txt', "w") as outfile:
+		outfile.write('\n'.join(messages))
+		
 	session.detach()
 
 if __name__ == '__main__':
 
 	main(package_name)
+
+		# 	({
+		# 	onMatch: function(module){
+		# 		console.log('Module name: ' + module.name + " - " + "Base Address: " + module.base.toString());
+		# 	}, 
+		# 	onComplete: function(){}
+		# });
